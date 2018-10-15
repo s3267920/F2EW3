@@ -1,5 +1,7 @@
-.content {
-  color: #000;
+@media screen and (min-width: 1800px) {
+  .content {
+    color: #000;
+  }
 }
 
 .content .content-title {

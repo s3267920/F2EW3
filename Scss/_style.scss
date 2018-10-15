@@ -21,11 +21,11 @@ $font: 14px 16px 20px 24px;
 
 //rwd
 
-$wide: "(min-width: 1800px)" !default;
-$desktop: "(min-width: 1200px)" !default;
-$tablet-landscape: "(min-width: 900px)" !default;
-$tablet-protrait: "(min-width: 600px)" !default;
-$phone: "(max-width: 600px)" !default;
+$wide: "min-width: 1800px" !default;
+$desktop: "min-width: 1200px" !default;
+$tablet-landscape: "min-width: 900px" !default;
+$tablet-protrait: "min-width: 600px" !default;
+$phone: "max-width: 600px" !default;
 
 @mixin background-img($center: center) {
   background-position: $center;
@@ -38,5 +38,7 @@ $phone: "(max-width: 600px)" !default;
 }
 
 @mixin media($query: $phone) {
-  @content;
+  @media screen and ($query) {
+    @content;
+  }
 }
