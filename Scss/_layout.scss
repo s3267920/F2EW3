@@ -25,7 +25,7 @@ header {
       text-indent: 101%;
       white-space: nowrap;
       overflow: hidden;
-      background-image: url(../img/logotype-lg-dark.svg);
+      background-image: url(/img/logotype-lg-dark.svg);
       background-repeat: no-repeat;
     }
   }
@@ -37,13 +37,28 @@ header {
       padding: 0 10px;
       a {
         padding: 25px 10px;
-        color: map-get($color, darkGreen);
+        color: map-get($color, lightGreen);
         font-weight: 600;
         &:hover,
-        &:focus {
+        &:focus,
+        &.checked {
           border-bottom: 4px solid map-get($color, darkGreen);
+          color: map-get($color, darkGreen);
         }
       }
     }
   }
+  .personal {
+    margin-right: 4%;
+    a {
+      padding: 25px 0;
+      color: map-get($color, darkGreen);
+      font-weight: bold;
+    }
+  }
+}
+
+footer {
+  height: 70px;
+  background-color: map-get($color, darkGreen);
 }
