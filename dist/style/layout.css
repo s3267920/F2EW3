@@ -506,7 +506,7 @@ header .logo a {
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
-  background-image: url(/img/logotype-lg-dark.svg);
+  background-image: url(../img/logotype-lg-dark.svg);
   background-repeat: no-repeat;
 }
 
