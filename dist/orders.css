@@ -128,13 +128,19 @@ header { height: 70px; background-color: #eaf0ed; display: -webkit-box; display:
 
 header .logo { display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; margin-right: 60px; margin-left: 4%; }
 
-header .logo a { width: 200px; height: 28px; display: inline-block; text-indent: 101%; white-space: nowrap; overflow: hidden; background-image: url(../img/logotype-lg-dark.svg); background-repeat: no-repeat; }
+header .logo a { width: 200px; height: 28px; display: inline-block; text-indent: 101%; white-space: nowrap; overflow: hidden; background-image: url(/img/logotype-lg-dark.svg); background-repeat: no-repeat; }
 
 header > nav { display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; margin-right: auto; }
 
 header > nav li { display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; padding: 0 10px; }
 
-header > nav li a { padding: 25px 10px; color: #3f5d45; font-weight: 600; }
+header > nav li a { padding: 25px 10px; color: #8da291; font-weight: 600; }
 
-header > nav li a:hover, header > nav li a:focus { border-bottom: 4px solid #3f5d45; }
-/*# sourceMappingURL=all.css.map */
+header > nav li a:hover, header > nav li a:focus, header > nav li a.checked { border-bottom: 4px solid #3f5d45; color: #3f5d45; }
+
+header .personal { margin-right: 4%; }
+
+header .personal a { padding: 25px 0; color: #3f5d45; font-weight: bold; }
+
+footer { height: 70px; background-color: #3f5d45; }
+/*# sourceMappingURL=orders.css.map */

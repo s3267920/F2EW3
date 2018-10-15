@@ -1,0 +1,25 @@
+@import "_style";
+
+.content {
+  @include media($wide) {
+    color: #000;
+  }
+  .content-title {
+    font-size: nth($font, 4);
+    font-weight: bold;
+    color: map-get($color, darkGreen);
+  }
+  .overview {
+    display: flex;
+    flex-direction: column;
+    .overview-head {
+      flex-direction: row;
+      h2 {
+        display: inline-flex;
+        justify-content: space-around;
+      }
+      .date {
+      }
+    }
+  }
+}

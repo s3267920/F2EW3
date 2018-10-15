@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../Scss/index_content.scss"
-    ],
-    "names": [],
-    "file": "index_content.min.css"
-}
