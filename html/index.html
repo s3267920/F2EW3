@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1">
+  <!--css-->
+  <link href="js/jquery-ui.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="/style/all.min.css" />
+
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <h1><a href="index.html">Sweetaste</a></h1>
+    </div>
+    <nav>
+
+      <ul>
+        <li><a class="checked" href="/html/index.html">HOME</a></li>
+        <li><a href="/html/orders.html">ORDERS</a></li>
+        <li><a href="product.html">PRODUCT</a></li>
+      </ul>
+    </nav>
+    <div class="personal"><a href="">ADMIN</a></div>
+  </header>
+  <div class="content">
+    <div class="overview">
+      <div class="overview-head">
+        <h2 class="content-title ">OVERVIEW</h2>
+        <div class="data">
+          <p class="day-start">2018/6/6</p>
+          <div class="triangle-right"></div>
+          <p class="day-start">2018/6/18</p>
+          <p class="day-style day-start">Weekly
+            <div class="triangle-bottom"></div>
+            <ul id="click-menu">
+              <li><a href="">weekly</a></li>
+              <li><a href="">Monthly</a></li>
+              <li><a href="">Yearly</a></li>
+              <li><a href="">Custom</a></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      <ul class="card">
+        <li class="revenue">
+          <p class="overview-title"><img src="/img/revenue.svg">TOTAL REVENUE</p>
+          <p class="number number-revenue" style="color:#71d321">54,540</p>
+
+        </li>
+        <li class="cost">
+          <p class="overview-title"><img src="/img/cost.svg">TOTAL COST</p>
+          <p class="number number-cost" style="color:#d0021b">12,660</p>
+        </li>
+        <li class="income">
+          <p class="overview-title"><img src="/img/income.svg">NET INCOME</p>
+          <p class="number number-income" style="color:#4a90e2">41,880</p>
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="activity">
+      <h2 class="content-title">Activity</h2>
+      <canvas id="myChart" width="940" height="400"></canvas>
+    </div>
+    <div class="transaction-web"></div>
+    <div class="latest-orders"></div>
+  </div>
+  <div id="footer">
+
+  </div>
+  <!--js&jquery-->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
