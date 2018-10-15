@@ -1,0 +1,30 @@
+//color
+
+$color: (
+  red: #d0021b,
+  orange: #f5a623,
+  skyblue: #4a90e2,
+  green: #7ed321,
+  whitegray: #f2f2f2,
+  lightgray: #e1e1e1,
+  gray: #c8c8c8,
+  darkgray: #757575,
+  white: #fff,
+  black: #000,
+  yellow: #ffe180,
+  darkGreen: #3f5d45,
+  whiteGreen: #eaf0ed,
+  lightGreen: #8da291
+);
+
+$font: 14px 16px 20px 24px;
+
+@mixin background-img($center: center) {
+  background-position: $center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+%linestyle {
+  text-decoration: none;
+}

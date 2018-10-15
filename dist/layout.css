@@ -1,0 +1,8 @@
+body { margin: 0 auto; max-width: 1024px; }
+
+header { height: 70px; background-color: #fff; }
+
+header .logo { display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; }
+
+header .logo a { width: 110px; height: 28px; display: inline-block; text-indent: 101%; white-space: nowrap; overflow: hidden; background-image: url(../img/logo-all-dark.svg); background-repeat: no-repeat; }
+/*# sourceMappingURL=layout.css.map */

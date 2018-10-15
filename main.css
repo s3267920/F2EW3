@@ -1,0 +1,295 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 以上為css reset */
+
+/* HOME頁 */
+body {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+/*
+ *
+header
+ *
+ */
+
+#header,
+.navbar {
+  height: 70px;
+  background-color: #000;
+}
+.navbar a {
+  text-decoration: none;
+}
+.logo a,
+.personal a {
+  color: #fff;
+}
+.logo {
+  display: inline;
+  float: left;
+  font-size: 24px;
+  margin: 11px 50px 11px 32px;
+  padding: 10px;
+}
+.menu li {
+  display: inline;
+  float: left;
+  margin: 0px 20px 0px 20px;
+}
+.menu li a {
+  display: inline-block;
+  width: 80px;
+  font-size: 16px;
+  color: #c8c8c8;
+  text-align: center;
+  padding: 26px 0 24px 0;
+}
+.menu li a:hover {
+  color: #fff;
+  border-bottom: 4px solid #e1e1e1;
+}
+li a.checked {
+  color: #fff;
+  border-bottom: 4px solid #f2f2f2;
+}
+.personal {
+  float: right;
+  margin: 26px 40px 25px 42px;
+}
+
+/*
+ *
+content
+ *
+ */
+
+.content {
+  background-color: #f2f2f2;
+}
+.content-title {
+  font-size: 24px;
+  font-family: HelveticaNeue;
+}
+.overview-head {
+  height: 58px;
+}
+.overview h2 {
+  float: left;
+  margin-top: 30px;
+  margin-left: 42px;
+}
+/* 日期部分 */
+.data {
+  float: right;
+  height: 22px;
+  margin: 39px 30px 0px 30px;
+  vertical-align: bottom;
+}
+.day-start {
+  color: #757575;
+  display: inline;
+  margin: 0 8px;
+}
+.day-style.day-start {
+  margin-left: 12px;
+}
+.triangle-right {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 5px solid #000;
+  border-bottom: 5px solid transparent;
+}
+.triangle-bottom {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid #000;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+/* 卡片部分 */
+.overview ul.card {
+  margin: 10px 32px 0px 32px;
+}
+.card li {
+  display: inline;
+  float: left;
+  margin: 10px;
+  width: 300px;
+  background-color: #fff;
+}
+
+.overview-title img {
+  height: 25px;
+  margin: 26px 8px 30px 68px;
+  vertical-align: middle;
+}
+.number {
+  text-align: center;
+  font-size: 35px;
+  margin-top: -14px;
+  margin-bottom: 30px;
+}
+p.overview-title {
+  display: inline;
+}
+
+/* 下拉式選單部分 */
+#click-menu li {
+  display: none;
+}
+
+/* 折線圖 */
+.activity h2 {
+  float: left;
+  margin-top: 30px;
+  margin-left: 42px;
+}
+.activity {
+  margin: 0 auto;
+  width: 940px;
+  background-color: #fff;
+}
+
+.activity canvas {
+  background-color: #fff;
+  display: block;
+  height: 400px;
+  width: 800px;
+}
+
+.clearfix {
+  clear: both;
+}
