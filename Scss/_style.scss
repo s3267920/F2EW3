@@ -5,19 +5,20 @@ $color: (
   orange: #f5a623,
   skyblue: #4a90e2,
   green: #7ed321,
-  whitegray: #f2f2f2,
-  lightgray: #e1e1e1,
-  gray: #c8c8c8,
-  darkgray: #757575,
+  // whitegray: #f2f2f2,
+  // lightgray: #e1e1e1,
+  // gray: #c8c8c8,
+  // darkgray: #757575,
   white: #fff,
   black: #000,
   yellow: #ffe180,
   darkGreen: #3f5d45,
-  whiteGreen: #eaf0ed,
-  lightGreen: #8da291
+  whiteGreen: #f9fbfa,
+  lightGreen: #8da291,
 );
 
-$font: 14px 16px 20px 24px;
+
+$font: 14px 16px 20px 24px 36px;
 
 //rwd
 
@@ -33,12 +34,24 @@ $phone: "max-width: 600px" !default;
   background-size: cover;
 }
 
-%linestyle {
-  text-decoration: none;
+@mixin flexcenter {
+  justify-content: center;
+  align-items: center; 
+}
+
+%numberStyle {
+  font-size: nth($font,5);
+  margin-top: 16px;
+  font-weight: bold;
 }
 
 @mixin media($query: $phone) {
   @media screen and ($query) {
     @content;
   }
+}
+
+@function color($type:green){
+  @return map-get($color, $type);
+  
 }

@@ -30,57 +30,96 @@
   </header>
   <div class="content">
     <div class="overview">
-      <div class="overview-head">
-        <h2 class="content-title ">OVERVIEW</h2>
+      <div class="overview_head">
+        <h2 class="content_title ">OVERVIEW</h2>
         <div class="date">
-          <p class="day-start">2018/6/6</p>
-          <div class="triangle-right"></div>
-          <p class="day-start">2018/6/18</p>
-          <p class="day-style day-start">Weekly
-            <div class="triangle-bottom"></div>
-            <ul id="click-menu">
-              <li><a href="">weekly</a></li>
+          <p class="day_start">2018/6/6</p>
+          <div class="triangle_right"></div>
+          <p class="day_end">2018/6/13</p>
+          <div class="select_option">
+            <a href="javascript:;" class="change_option">Weekly
+              <div class="triangle_bottom"></div>
+            </a>
+            <ul id="select_menu" style="display:none">
+              <li><a href="">Daily</a></li>
+              <li><a href="">Weekly</a></li>
               <li><a href="">Monthly</a></li>
               <li><a href="">Yearly</a></li>
               <li><a href="">Custom</a></li>
             </ul>
-          </p>
+          </div>
         </div>
       </div>
-      <ul class="card">
+      <ul class="overview_card">
         <li class="revenue">
-          <p class="overview-title"><img src="/img/revenue.svg">TOTAL REVENUE</p>
-          <p class="number number-revenue" style="color:#71d321">54,540</p>
+          <p class="overview-title"><img src="../img/revenue_green.svg">TOTAL REVENUE</p>
+          <p class="number-revenue">54,540</p>
 
         </li>
         <li class="cost">
-          <p class="overview-title"><img src="/img/cost.svg">TOTAL COST</p>
-          <p class="number number-cost" style="color:#d0021b">12,660</p>
+          <p class="overview-title"><img src="../img/cost_green.svg">TOTAL COST</p>
+          <p class="number-cost">12,660</p>
         </li>
         <li class="income">
-          <p class="overview-title"><img src="/img/income.svg">NET INCOME</p>
-          <p class="number number-income" style="color:#4a90e2">41,880</p>
+          <p class="overview-title"><img src="../img/income_green.svg">NET INCOME</p>
+          <p class="number-income">41,880</p>
         </li>
       </ul>
     </div>
-    <div class="clearfix"></div>
     <div class="activity">
-      <h2 class="content-title">Activity</h2>
-      <canvas id="myChart" width="940" height="400"></canvas>
+      <h2 class="content_title">Activity</h2>
+      <div id="myChart" style=" width:940px; height:400px"></div>
+      <!-- <canvas id="myChart" width='940' height='400'></canvas> -->
     </div>
-    <div class="transaction-web"></div>
-    <div class="latest-orders"></div>
+    <div class="transaction_web ">
+      <h2 class="content_title">Transaction Website</h2>
+      <ul>
+        <li>
+          <img src="../img/fb-icon.svg" alt="facebook_icon">
+          <p>Facebook.com</p>
+          <div class="web_data">
+            <p> 45,836</p><span class="increase"><img src="../img/arrow-up.svg" alt="">20%</span>
+          </div>
+        </li>
+        <li>
+          <img src="../img/google-icon48.svg">
+          <p>google.com</p>
+          <div class="web_data">
+            <p>23,582</p>
+            <span class="increase"><img src="../img/arrow-up.svg">12%</span>
+          </div>
+        </li>
+        <li>
+          <img src="../img/shopify-icon.svg" alt="shopify_icon">
+          <p>Shopify.com</p>
+          <div class="web_data">
+            <p>2,489</p>
+            <span class="decrease"><img src="../img/arrow-down.svg">15%</span>
+          </div>
+        </li>
+        <li>
+          <img src="../img/amazon-icon.svg" alt="amazon_icon">
+          <p>amazon.com</p>
+          <div class="web_data">
+            <p>1,057</p>
+            <span class="decrease"><img src="../img/arrow-down.svg">30%</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="latest-orders">
+
+    </div>
   </div>
   <footer>
 
   </footer>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js'></script>
   <!--js&jquery-->
-  <script src="../js/jquery-3.3.1.min.js"></script>
-  <script src="../js/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-  <script src="../js/index.js"></script>
+  <script src="../js/jquery-3.3.1.min.js "></script>
+  <script src="../js/jquery-ui.min.js "></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0-release/echarts.min.js'></script>
+  <script src="../js/index.js "></script>
 </body>
 
 </html>

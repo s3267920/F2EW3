@@ -1,24 +1,195 @@
-@import "_style";
+@import '_style';
 
 .content {
-  @include media($wide) {
-    color: #000;
-  }
-  .content-title {
+  background-color:color(whiteGreen);
+  .content_title {
     font-size: nth($font, 4);
     font-weight: bold;
-    color: map-get($color, darkGreen);
+    color: color(darkGreen);
   }
   .overview {
     display: flex;
     flex-direction: column;
-    .overview-head {
+    justify-content: center;
+    margin-left: 4%;
+    .overview_head {
+      display: flex;
       flex-direction: row;
+      margin-top: 30px;
       h2 {
         display: inline-flex;
         justify-content: space-around;
+        line-height: 28px;
       }
+      /* 日期部分 */
       .date {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 4%;
+        p {
+          color: map-get($color, lightGreen);
+          display: inline-flex;
+          margin: 0 8px;
+        }
+        .triangle_right {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-top: 5px solid transparent;
+          border-left: 5px solid map-get($color, darkGreen);
+          border-bottom: 5px solid transparent;
+        }
+        .select_option {
+          color: map-get($color, lightGreen);
+          margin: 0 8px;
+          position: relative;
+          a {
+            color: map-get($color, lightGreen);
+          }
+          ul {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: -50px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px map-get($color, darkGreen);
+            li {
+              
+              background-color: map-get($color, whiteGreen);
+              width: 125px;
+              height: 34px;
+              &:first-child{
+                padding-top: 6px;
+              }
+              &:last-child{
+                padding-bottom: 6px;
+              }
+              a{
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                background-color: map-get($color, whiteGreen);
+                width: 125px;
+                height: 34px;
+                &:hover,
+                &:focus {
+                  background-color: map-get($color, yellow);
+                }
+              }
+            }
+          }
+        }
+        .triangle_bottom {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-top: 5px solid map-get($color, darkGreen);
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+        }
+      }
+    }
+    .overview_card{
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      .overview-title{
+        color: map-get($color,darkGreen);
+        font-weight: 600;
+      }
+      li{
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1.95%;
+        background-color:color(white);
+        width: 300px;
+        height: 138px;
+        box-shadow: 0 0 10px color(lightGreen);
+        img{
+          height: 25px;
+          margin-right: 10px;
+        }
+        .number-revenue{
+          @extend %numberStyle;
+          color: color(green);
+        }
+        .number-cost{
+          @extend %numberStyle;
+          color: color(red);
+        }
+        .number-income{
+          @extend %numberStyle;
+          color: color(skyblue);
+        }
+        
+      }
+    }
+  }
+  .activity,.transaction_web{
+    background-color: color(white);
+    margin: 0 4%;
+    box-shadow: 0 0 10px color(lightGreen);
+    h2{
+      padding: 30px 4.5%;
+      padding-bottom: 0;
+      line-height: 28px;
+    }
+  }
+  .transaction_web{
+    width: 44.92%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    h2{
+      margin-left: 4%;
+    }
+    ul{
+      display: flex;
+      flex-direction: column;
+      margin-top: 5px;
+      li{
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 8%;
+        padding: 25px 0;
+        border-bottom: 1px solid color(lightGreen);
+        >img{
+          height: 45px;
+          margin-right: 20px;
+        }
+        >p{
+          color:color(lightGreen); 
+        }
+        .web_data{
+          display: inline-flex;
+          flex-direction: row;
+          align-items: center;
+          margin-left: auto;
+          p{
+            margin-right: 20px;
+            font-size: nth($font,3);
+            font-weight: 500;
+            color: color(darkGreen) ;
+          }
+          span{
+            img{
+              height: 18px;
+              vertical-align: bottom;
+              margin-right: 10px;
+            }
+          }
+          .increase{
+            color: color(green);
+          }
+          .decrease{
+            color:color(red)
+          }
+
+        }
       }
     }
   }

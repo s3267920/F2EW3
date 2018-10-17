@@ -480,7 +480,7 @@ a {
 
 header {
   height: 70px;
-  background-color: #eaf0ed;
+  background-color: #496c50;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -506,7 +506,7 @@ header .logo a {
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
-  background-image: url(../img/logotype-lg-dark.svg);
+  background-image: url(../img/logotype-lg.svg);
   background-repeat: no-repeat;
 }
 
@@ -526,13 +526,13 @@ header > nav li {
 
 header > nav li a {
   padding: 25px 10px;
-  color: #8da291;
+  color: #b7c4ba;
   font-weight: 600;
 }
 
 header > nav li a:hover, header > nav li a:focus, header > nav li a.checked {
-  border-bottom: 4px solid #3f5d45;
-  color: #3f5d45;
+  border-bottom: 4px solid #fff;
+  color: #fff;
 }
 
 header .personal {
@@ -541,7 +541,7 @@ header .personal {
 
 header .personal a {
   padding: 25px 0;
-  color: #3f5d45;
+  color: #f9fbfa;
   font-weight: bold;
 }
 
