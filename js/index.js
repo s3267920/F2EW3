@@ -24,158 +24,174 @@
   // let ctx = canvas.getContext('2d');
   let myChart = echarts.init(canvas);
   let option = {
-    tooltip: {
-      show: true,
-      trigger: 'item'
-    },
-    legend: {
-      data: [
+    baseOption: {
+      tooltip: {
+        show: true,
+        trigger: 'item'
+      },
+      legend: {
+        data: [
+          {
+            name: 'TOTAL REVENUE',
+            icon: 'circle'
+          },
+          {
+            name: 'TOTAL COST',
+            icon: 'circle'
+          },
+          {
+            name: 'NET INCOME',
+            icon: 'circle'
+          }
+        ],
+        itemWidth: 10
+      },
+      textStyle: {
+        color: '#8da291',
+        fontWeight: 'bold',
+        fontSize: 16
+      },
+      xAxis: [
         {
-          name: 'TOTAL REVENUE',
-          icon: 'circle'
-        },
-        {
-          name: 'TOTAL COST',
-          icon: 'circle'
-        },
-        {
-          name: 'NET INCOME',
-          icon: 'circle'
+          type: 'category',
+          data: [
+            '6 JUN',
+            '7 JUN',
+            '8 JUN',
+            '9 JUN',
+            '10 JUN',
+            '11 JUN',
+            '12 JUN',
+            '13 JUN'
+          ],
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            color: '#8da291',
+            fontWeight: 'bold',
+            fontSize: 16,
+            interval: 0
+          }
         }
       ],
-      itemWidth: 10
-    },
-    textStyle: {
-      color: '#8da291',
-      fontWeight: 'bold',
-      fontSize: 16
-    },
-    xAxis: [
-      {
-        type: 'category',
-        data: [
-          '6 JUN',
-          '7 JUN',
-          '8 JUN',
-          '9 JUN',
-          '10 JUN',
-          '11 JUN',
-          '12 JUN',
-          '13 JUN'
-        ],
-        axisTick: {
-          show: false
-        },
-        axisLabel: {
-          color: '#8da291',
-          fontWeight: 'bold',
-          fontSize: 16
-        }
-      }
-    ],
-    yAxis: [
-      {
-        type: 'value',
-        boundaryGap: false,
-        min: 0,
+      yAxis: [
+        {
+          type: 'value',
+          boundaryGap: false,
+          min: 0,
 
-        axisLabel: {
-          color: '#8da291',
-          fontWeight: 'bold',
-          fontSize: 16
-        }
-      }
-    ],
-    series: [
-      {
-        name: 'TOTAL REVENUE',
-        type: 'line',
-        color: '#7ed321',
-        data: revenue,
-        tooltip: {
-          backgroundColor: '#7ed321',
-          formatter: '{a}<br />{b} : {c}'
-        },
-        itemStyle: {
-          opacity: 0
-        },
-        emphasis: {
-          itemStyle: {
-            borderColor: '#7ed321',
-            borderWidth: 4,
-            opacity: 1
-          },
-          label: {
-            show: true,
-            formatter: '{c}',
-            color: '#7ed321'
+          axisLabel: {
+            color: '#8da291',
+            fontWeight: 'bold',
+            fontSize: 16,
+            interval: 0
           }
         }
-      },
-      {
-        name: 'TOTAL COST',
-        type: 'line',
-        color: '#d0021b',
-        data: cost,
-        tooltip: {
-          backgroundColor: '#d0021b',
-          formatter: '{a}<br />{b} : {c}'
-        },
-        itemStyle: {
-          opacity: 0
-        },
-        emphasis: {
-          itemStyle: {
-            borderColor: '#d0021b',
-            borderWidth: 4,
-            opacity: 1
+      ],
+      series: [
+        {
+          name: 'TOTAL REVENUE',
+          type: 'line',
+          color: '#7ed321',
+          data: revenue,
+          tooltip: {
+            backgroundColor: '#7ed321',
+            formatter: '{a}<br />{b} : {c}'
           },
-          label: {
-            show: true,
-            formatter: '{c}',
-            color: '#d0021b'
-          }
-        }
-      },
-      {
-        name: 'NET INCOME',
-        type: 'line',
-        color: '#4a90e2',
-        data: income,
-        tooltip: {
-          backgroundColor: '#4a90e2',
-          formatter: '{a}<br />{b} : {c}'
-        },
-        itemStyle: {
-          opacity: 0
-        },
-        markLine: {
+          itemStyle: {
+            opacity: 0
+          },
           emphasis: {
-            lineStyle: {
-              width: 50,
-              color: '#fff'
+            itemStyle: {
+              borderColor: '#7ed321',
+              borderWidth: 4,
+              opacity: 1
+            },
+            label: {
+              show: true,
+              formatter: '{c}',
+              color: '#7ed321'
             }
           }
         },
-        lineStyle: {
+        {
+          name: 'TOTAL COST',
+          type: 'line',
+          color: '#d0021b',
+          data: cost,
+          tooltip: {
+            backgroundColor: '#d0021b',
+            formatter: '{a}<br />{b} : {c}'
+          },
+          itemStyle: {
+            opacity: 0
+          },
           emphasis: {
-            width: 50,
-            color: '#fff'
+            itemStyle: {
+              borderColor: '#d0021b',
+              borderWidth: 4,
+              opacity: 1
+            },
+            label: {
+              show: true,
+              formatter: '{c}',
+              color: '#d0021b'
+            }
           }
         },
-        emphasis: {
-          itemStyle: {
-            borderColor: '#4a90e2',
-            borderWidth: 4,
-            opacity: 1
+        {
+          name: 'NET INCOME',
+          type: 'line',
+          color: '#4a90e2',
+          data: income,
+          tooltip: {
+            backgroundColor: '#4a90e2',
+            formatter: '{a}<br />{b} : {c}'
           },
-          label: {
-            show: true,
-            formatter: '{c}',
-            color: '#4a90e2'
+          itemStyle: {
+            opacity: 0
+          },
+          markLine: {
+            emphasis: {
+              lineStyle: {
+                width: 50,
+                color: '#fff'
+              }
+            }
           },
           lineStyle: {
-            width: 10
+            emphasis: {
+              width: 50,
+              color: '#fff'
+            }
+          },
+          emphasis: {
+            itemStyle: {
+              borderColor: '#4a90e2',
+              borderWidth: 4,
+              opacity: 1
+            },
+            label: {
+              show: true,
+              formatter: '{c}',
+              color: '#4a90e2'
+            },
+            lineStyle: {
+              width: 10
+            }
+          }
+        }
+      ]
+    },
+    media: [
+      {
+        query: {
+          maxWidth: 1000
+        },
+        option: {
+          length: {
+            orient: 'horizontal'
           }
         }
       }
@@ -183,7 +199,7 @@
   };
 
   var myLineChart = myChart.setOption(option);
-
+  window.onresize = myChart.resize;
   window.onload = function() {};
 })();
 
