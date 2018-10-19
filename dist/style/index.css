@@ -201,23 +201,38 @@
   color: #4a90e2;
 }
 
-.content .activity, .content .transaction_web {
+.content .activity,
+.content .transaction_web,
+.content .latest_orders {
   background-color: #fff;
   margin: 0 4%;
   -webkit-box-shadow: 0 0 10px #8da291;
           box-shadow: 0 0 10px #8da291;
 }
 
-.content .activity h2, .content .transaction_web h2 {
+.content .activity h2,
+.content .transaction_web h2,
+.content .latest_orders h2 {
   padding: 30px 4.5%;
   padding-bottom: 0;
   line-height: 28px;
 }
 
 .content .transaction_web {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 44.92%;
   margin-top: 20px;
   margin-bottom: 40px;
+  margin-right: 0;
 }
 
 .content .transaction_web h2 {
@@ -250,6 +265,11 @@
   border-bottom: 1px solid #8da291;
 }
 
+.content .transaction_web ul li:last-child {
+  border: none;
+  margin-bottom: 5px;
+}
+
 .content .transaction_web ul li > img {
   height: 45px;
   margin-right: 20px;
@@ -280,10 +300,78 @@
   color: #3f5d45;
 }
 
-.content .transaction_web ul li .web_data span img {
+.content .transaction_web ul li .web_data .compare {
+  position: relative;
+}
+
+.content .transaction_web ul li .web_data .compare img {
   height: 18px;
   vertical-align: bottom;
   margin-right: 10px;
+}
+
+.content .transaction_web ul li .web_data .compare .tooltip {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  visibility: hidden;
+  padding: 20px 10px 20px 20px;
+  background-color: #3f5d45;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #f9fbfa;
+  font-size: 14px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 150%;
+  left: -100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.content .transaction_web ul li .web_data .compare .tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  border-top: 8px solid #3f5d45;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.content .transaction_web ul li .web_data .compare .tooltip p {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  color: #f9fbfa;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.content .transaction_web ul li .web_data .compare .tooltip p span {
+  margin: 0 5px;
+  font-size: 20px;
+}
+
+.content .transaction_web ul li .web_data .compare .tooltip .old_data {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(249, 251, 250, 0.8);
+}
+
+.content .transaction_web ul li .web_data .compare:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .content .transaction_web ul li .web_data .increase {
@@ -292,5 +380,136 @@
 
 .content .transaction_web ul li .web_data .decrease {
   color: #d0021b;
+}
+
+.content .latest_orders {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 44.92%;
+  margin-left: 16px;
+}
+
+.content .latest_orders h2 {
+  margin-left: 4%;
+  line-height: 28px;
+}
+
+.content .latest_orders ul {
+  width: 90%;
+  margin: 22px auto;
+}
+
+.content .latest_orders li {
+  width: 90%;
+  margin: 0 4%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #8da291;
+}
+
+.content .latest_orders li:last-child {
+  border: none;
+}
+
+.content .latest_orders li > span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100px;
+  height: 100px;
+  margin: 8px 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content .latest_orders li .orders_content {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 20px;
+}
+
+.content .latest_orders li .orders_content .order_name {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #3f5d45;
+}
+
+.content .latest_orders li .orders_content img {
+  width: 10px;
+  margin-right: 10px;
+}
+
+.content .latest_orders li .orders_content img:last-child {
+  width: 8px;
+}
+
+.content .latest_orders li .orders_content span {
+  color: #8da291;
+}
+
+.content .latest_orders li .orders_content .time {
+  margin-bottom: 10px;
+}
+
+.content .latest_orders li .price {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: auto;
+  margin-bottom: 30px;
+}
+
+.content .latest_orders li .price > p {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 14px;
+  color: #3f5d45;
+}
+
+.content .latest_orders li .price > span {
+  color: #3f5d45;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
 }
 /*# sourceMappingURL=index.css.map */

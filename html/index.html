@@ -53,16 +53,16 @@
       <ul class="overview_card">
         <li class="revenue">
           <p class="overview-title"><img src="../img/revenue_green.svg">TOTAL REVENUE</p>
-          <p class="number-revenue">54,540</p>
+          <p class="number-revenue" id="revenue_total">54,540</p>
 
         </li>
         <li class="cost">
           <p class="overview-title"><img src="../img/cost_green.svg">TOTAL COST</p>
-          <p class="number-cost">12,660</p>
+          <p class="number-cost" id="cost_total">12,660</p>
         </li>
         <li class="income">
           <p class="overview-title"><img src="../img/income_green.svg">NET INCOME</p>
-          <p class="number-income">41,880</p>
+          <p class="number-income" id="income_total">41,880</p>
         </li>
       </ul>
     </div>
@@ -78,7 +78,14 @@
           <img src="../img/fb-icon.svg" alt="facebook_icon">
           <p>Facebook.com</p>
           <div class="web_data">
-            <p> 45,836</p><span class="increase"><img src="../img/arrow-up.svg" alt="">20%</span>
+            <p> 45,836</p>
+            <div class="compare increase">
+              <img src="../img/arrow-up.svg">20%
+              <div class="tooltip">
+                <p>INCREASE <span class="increase"> 899 </span> VIEWS</p>
+                <span class="old_data">last week: 44,937</span>
+              </div>
+            </div>
           </div>
         </li>
         <li>
@@ -86,7 +93,13 @@
           <p>google.com</p>
           <div class="web_data">
             <p>23,582</p>
-            <span class="increase"><img src="../img/arrow-up.svg">12%</span>
+            <div class="compare increase">
+              <img src="../img/arrow-up.svg">12%
+              <div class="tooltip">
+                <p>INCREASE <span class="increase"> 899 </span> VIEWS</p>
+                <span class="old_data">last week: 44,937</span>
+              </div>
+            </div>
           </div>
         </li>
         <li>
@@ -94,7 +107,13 @@
           <p>Shopify.com</p>
           <div class="web_data">
             <p>2,489</p>
-            <span class="decrease"><img src="../img/arrow-down.svg">15%</span>
+            <div class="compare decrease">
+              <img src="../img/arrow-down.svg">15%
+              <div class="tooltip">
+                <p>DECREASE <span class="decrease"> 899 </span> VIEWS</p>
+                <span class="old_data">last week: 44,937</span>
+              </div>
+            </div>
           </div>
         </li>
         <li>
@@ -102,19 +121,46 @@
           <p>amazon.com</p>
           <div class="web_data">
             <p>1,057</p>
-            <span class="decrease"><img src="../img/arrow-down.svg">30%</span>
+            <div class="compare decrease">
+              <img src="../img/arrow-down.svg">30%
+              <div class="tooltip">
+                <p>DECREASE <span class="decrease"> 899 </span> VIEWS</p>
+                <span class="old_data">last week: 44,937</span>
+              </div>
+            </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="latest-orders">
+    <div class="latest_orders">
+      <h2 class="content_title">Latest Orders</h2>
+      <ul id="app">
+        <li v-for="i in 3" v-if="order">
+          <span :style="{backgroundImage: 'url(' + desert[i-1].src + ')'}"></span>
+          <div class="orders_content">
+            <p class="order_name">{{desert[i-1].name}}</p>
 
+            <div class="time"><img src="../img/clock.svg" alt=""><span v-text="getDate()"></span>
+              <span v-text="getTime()"></span></div>
+
+            <span class="customer_name"><img src="../img/icon_person.svg" alt="">{{order[i-1].name}}</span>
+          </div>
+          <div class="price">
+            <p>Total</p>
+            <span v-if="order">{{order[i-1].price}}</span>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
   <footer>
 
   </footer>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js'></script> 2
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js'></script>
   <!--js&jquery-->
   <script src="../js/jquery-3.3.1.min.js "></script>
   <script src="../js/jquery-ui.min.js "></script>

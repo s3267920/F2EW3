@@ -1,0 +1,11 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "first_name": "王",
+      "last_name": "大名",
+      "phone": "219-839-2819",
+      "address": "高雄市新興區幸福路100號"
+    }
+  ]
+}

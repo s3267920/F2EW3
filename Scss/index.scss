@@ -1,7 +1,7 @@
 @import '_style';
 
 .content {
-  background-color:color(whiteGreen);
+  background-color: color(whiteGreen);
   .content_title {
     font-size: nth($font, 4);
     font-weight: bold;
@@ -56,17 +56,16 @@
             margin-top: 10px;
             box-shadow: 0 0 10px map-get($color, darkGreen);
             li {
-              
               background-color: map-get($color, whiteGreen);
               width: 125px;
               height: 34px;
-              &:first-child{
+              &:first-child {
                 padding-top: 6px;
               }
-              &:last-child{
+              &:last-child {
                 padding-bottom: 6px;
               }
-              a{
+              a {
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
@@ -91,104 +90,244 @@
         }
       }
     }
-    .overview_card{
+    .overview_card {
       display: flex;
       margin-top: 20px;
       margin-bottom: 20px;
-      .overview-title{
-        color: map-get($color,darkGreen);
+      .overview-title {
+        color: map-get($color, darkGreen);
         font-weight: 600;
       }
-      li{
+      li {
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-right: 1.95%;
-        background-color:color(white);
+        background-color: color(white);
         width: 300px;
         height: 138px;
         box-shadow: 0 0 10px color(lightGreen);
-        img{
+        img {
           height: 25px;
           margin-right: 10px;
         }
-        .number-revenue{
+        .number-revenue {
           @extend %numberStyle;
           color: color(green);
         }
-        .number-cost{
+        .number-cost {
           @extend %numberStyle;
           color: color(red);
         }
-        .number-income{
+        .number-income {
           @extend %numberStyle;
           color: color(skyblue);
         }
-        
       }
     }
   }
-  .activity,.transaction_web{
+  .activity,
+  .transaction_web,
+  .latest_orders {
     background-color: color(white);
     margin: 0 4%;
     box-shadow: 0 0 10px color(lightGreen);
-    h2{
+    h2 {
       padding: 30px 4.5%;
       padding-bottom: 0;
       line-height: 28px;
     }
   }
-  .transaction_web{
+  .transaction_web {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
     width: 44.92%;
     margin-top: 20px;
     margin-bottom: 40px;
-    h2{
+    margin-right: 0;
+    h2 {
       margin-left: 4%;
     }
-    ul{
+    ul {
       display: flex;
       flex-direction: column;
       margin-top: 5px;
-      li{
+      li {
         display: inline-flex;
         justify-content: space-between;
         align-items: center;
         margin: 0 8%;
         padding: 25px 0;
         border-bottom: 1px solid color(lightGreen);
-        >img{
+        &:last-child {
+          border: none;
+          margin-bottom: 5px;
+        }
+        > img {
           height: 45px;
           margin-right: 20px;
         }
-        >p{
-          color:color(lightGreen); 
+        > p {
+          color: color(lightGreen);
         }
-        .web_data{
+        .web_data {
           display: inline-flex;
           flex-direction: row;
           align-items: center;
           margin-left: auto;
-          p{
+          p {
             margin-right: 20px;
-            font-size: nth($font,3);
+            font-size: nth($font, 3);
             font-weight: 500;
-            color: color(darkGreen) ;
+            color: color(darkGreen);
           }
-          span{
-            img{
+          .compare {
+            position: relative;
+            img {
               height: 18px;
               vertical-align: bottom;
               margin-right: 10px;
             }
+            .tooltip {
+              display: inline-flex;
+              visibility: hidden;
+              padding: 20px 10px 20px 20px;
+              background-color: color(darkGreen);
+              flex-direction: column;
+              align-items: center;
+              color: color(whiteGreen);
+              font-size: nth($font, 1);
+              border-radius: 5px;
+              //位置
+              position: absolute;
+              bottom: 150%;
+              left: -100%;
+
+              //hover前
+              opacity: 0;
+              transition: opacity 0.3s;
+              //箭頭部分
+              &::after {
+                content: '';
+                position: absolute;
+                bottom: -20%;
+                left: 50%;
+                border-top: 8px solid color(darkGreen);
+                border-right: 4px solid transparent;
+                border-left: 4px solid transparent;
+                border-bottom: 10px solid transparent;
+              }
+              p {
+                display: inline-flex;
+                align-items: baseline;
+                color: color(whiteGreen);
+                font-size: nth($font, 1);
+                margin-bottom: 10px;
+                span {
+                  margin: 0 5px;
+                  font-size: nth($font, 3);
+                }
+              }
+              .old_data {
+                font-style: italic;
+                font-weight: 300;
+                color: rgba(color(whiteGreen), 0.8);
+              }
+            }
+            &:hover {
+              .tooltip {
+                visibility: visible;
+                opacity: 1;
+              }
+            }
           }
-          .increase{
+          .increase {
             color: color(green);
           }
-          .decrease{
-            color:color(red)
+          .decrease {
+            color: color(red);
           }
-
+        }
+      }
+    }
+  }
+  .latest_orders {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 44.92%;
+    margin-left: 16px;
+    h2 {
+      margin-left: 4%;
+      line-height: 28px;
+    }
+    ul {
+      width: 90%;
+      margin: 22px auto;
+    }
+    li {
+      width: 90%;
+      margin: 0 4%;
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid color(lightGreen);
+      &:last-child {
+        border: none;
+      }
+      > span {
+        display: inline-flex;
+        width: 100px;
+        height: 100px;
+        margin: 8px 0;
+        @include background-img;
+      }
+      .orders_content {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20px;
+        .order_name {
+          font-size: nth($font, 3);
+          line-height: 24px;
+          font-weight: bold;
+          margin-bottom: 8px;
+          color: color(darkGreen);
+        }
+        img {
+          width: 10px;
+          margin-right: 10px;
+          &:last-child {
+            width: 8px;
+          }
+        }
+        span {
+          color: color(lightGreen);
+        }
+        .time {
+          margin-bottom: 10px;
+        }
+      }
+      .price {
+        display: inline-flex;
+        flex-direction: column;
+        align-self: flex-end;
+        margin-left: auto;
+        margin-bottom: 30px;
+        > p {
+          display: inline-flex;
+          justify-content: flex-end;
+          font-size: nth($font, 1);
+          color: color(darkGreen);
+        }
+        > span {
+          color: color(darkGreen);
+          font-weight: bold;
+          font-size: nth($font, 3);
+          line-height: 24px;
         }
       }
     }
