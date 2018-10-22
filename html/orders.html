@@ -2,35 +2,69 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Orders</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../style/layout.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../style/orders.min.css" />
-    <script src="..main.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Orders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/layout.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/orders.min.css" />
+
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1><a href="index.html">Sweetaste</a></h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a class="checked" href="orders.html">ORDERS</a></li>
-                <li><a href="product.html">PRODUCT</a></li>
-            </ul>
-        </nav>
-        <div class="personal"><a href="">ADMIN</a></div>
-    </header>
-    <div class="content">
+  <header>
+    <div class="logo">
+      <h1><a href="index.html">Sweetaste</a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a class="checked" href="orders.html">ORDERS</a></li>
+        <li><a href="product.html">PRODUCT</a></li>
+      </ul>
+    </nav>
+    <div class="personal"><a href="">ADMIN</a></div>
+  </header>
+  <div class="content">
+    <div class="content_head">
+      <div class="select_option">
+        <input type="checkbox" name="all" class="check_all" id="all">
+        <span class="triangle_bottom" id="check_more_option"></span>
+        <span id="check_option_icon">
+          <ul id="select_menu">
+            <li><a href="">Select All</a></li>
+            <li><a href="">Unselect All</a></li>
+            <li><a href="">Paid</a></li>
+            <li><a href="">Unpaid</a></li>
+            <li><a href="">Shipping</a></li>
+            <li><a href="">Done</a></li>
+          </ul>
+      </div>
+      </span>
+
+      <div class="edit_section">
+        <a href="javascript:;">EDIT SECTION
+          <span class="triangle_bottom" id="edit_section_option"></span>
+        </a>
+        <ul id="edit_section_menu">
+          <li><input type="checkbox" name="edit_section" id="order_id"><label for="order_id">Order ID</label></li>
+          <li><input type="checkbox" name="edit_section" id="customer"><label for="customer">Customer</label></li>
+          <li><input type="checkbox" name="edit_section" id="product_list"><label for="product_list">Product</label></li>
+          <li><input type="checkbox" name="edit_section" id="total"><label for="total">Total</label></li>
+          <li><input type="checkbox" name="edit_section" id="add_cart"><label for="add_cart">Add to Cart</label></li>
+          <li><input type="checkbox" name="edit_section" id="check_out"><label for="check_out">Check-out</label></li>
+          <li><input type="checkbox" name="edit_section" id="address"><label for="address">Address</label></li>
+          <li><input type="checkbox" name="edit_section" id="phone"><label for="phone">Phone</label></li>
+          <li><input type="checkbox" name="edit_section" id="email"><label for="email">Email</label></li>
+          <li><input type="checkbox" name="edit_section" id="status"><label for="status">Status</label></li>
+        </ul>
+      </div>
 
     </div>
-    <div id="footer">
 
-    </div>
+  </div>
+  <footer></footer>
+  <script src="../js/orders.js"></script>
 </body>
 
 </html>

@@ -1,1 +1,112 @@
-@import "_style";
+@import '_style';
+a {
+  text-decoration: none;
+}
+.content {
+  background-color: color(whiteGreen);
+  .content_head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    #check_option_icon {
+      display: none;
+      @include background-img;
+      background-image: url(../img/tags.svg);
+      height: 15px;
+      width: 19px;
+      margin-left: 15px;
+      position: relative;
+    }
+    .select_option {
+      color: color(lightGreen);
+      display: inline-flex;
+      align-items: center;
+      margin: 0 8px;
+      a {
+        color: color(lightGreen);
+      }
+      ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 15px;
+        left: -45px;
+        margin-top: 10px;
+        box-shadow: 0 0 10px color(darkGreen);
+        li {
+          background-color: color(whiteGreen);
+          width: 125px;
+          height: 34px;
+          &:first-child {
+            padding-top: 6px;
+          }
+          &:last-child {
+            padding-bottom: 6px;
+          }
+          a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background-color: color(whiteGreen);
+            width: 125px;
+            height: 34px;
+            &:hover,
+            &:focus {
+              background-color: color(darkGreen);
+              color: color(whiteGreen);
+            }
+          }
+        }
+      }
+    }
+    .triangle_bottom {
+      display: inline-flex;
+      width: 0;
+      height: 0;
+      margin-left: 5px;
+      border-top: 5px solid color(darkGreen);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+    }
+
+    .edit_section {
+      margin: 0 8px;
+      position: relative;
+      a {
+        color: color(darkGreen);
+        display: inline-flex;
+        align-items: center;
+      }
+      ul {
+        display: none;
+        // display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0px;
+        margin-top: 10px;
+        box-shadow: 0 0 10px color(darkGreen);
+        li {
+          background-color: color(whiteGreen);
+          width: 150px;
+          height: 34px;
+          display: inline-flex;
+          align-items: center;
+          &:first-child {
+            padding-top: 6px;
+          }
+          &:last-child {
+            padding-bottom: 6px;
+          }
+          input {
+            margin: 10px 0px 10px 20px;
+          }
+          label {
+            margin-left: 10px;
+          }
+        }
+      }
+      margin-left: auto;
+    }
+  }
+}
