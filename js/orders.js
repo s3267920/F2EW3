@@ -12,7 +12,7 @@
       checkMenu.style.display = 'none';
     }
   });
-  let editSectionOption = document.querySelector('#edit_section_option');
+  let editSectionOption = document.querySelector('.edit_section > a');
   let editSectionMenu = document.querySelector('#edit_section_menu');
   //下拉式選單
   editSectionOption.addEventListener('click', () => {
