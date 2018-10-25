@@ -3,9 +3,13 @@ a {
   text-decoration: none;
 }
 .content {
+  width: 100%;
   background-color: color(whiteGreen);
   .content_head {
     display: flex;
+    margin: 0 4%;
+    padding-top: 30px;
+    padding-bottom: 15px;
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -85,6 +89,7 @@ a {
         // display: flex;
         flex-direction: column;
         position: absolute;
+        z-index: 5;
         left: 0px;
         margin-top: 10px;
         box-shadow: 0 0 10px color(darkGreen);
@@ -109,6 +114,159 @@ a {
         }
       }
       margin-left: auto;
+    }
+  }
+  .content_table {
+    margin: 0 4%;
+    // height: 1000px;
+    overflow: hidden;
+    overflow-x: scroll;
+    .table {
+      table {
+        color: color(darkGreen);
+        table-layout: auto;
+        word-break: keep-all;
+        tr {
+          white-space: nowrap;
+          border-spacing: 10px;
+          border: 1px solid #000;
+          th {
+            height: 40px;
+            text-align: left;
+            background-color: color(yellow);
+            display: inline-table;
+            min-width: 120px;
+            border-collapse: separate;
+            border-spacing: 10px 0;
+            &:first-child {
+              vertical-align: top;
+              min-width: 20px;
+              border-spacing: 0;
+            }
+          }
+          td {
+            line-height: 150%;
+            font-size: nth($font, 1);
+            text-align: left;
+            display: inline-table;
+            min-width: 120px;
+            max-width: 120px;
+            word-break: break-all;
+            white-space: normal;
+            border-collapse: separate;
+            border-spacing: 10px;
+            &:first-child {
+              font-size: 16px;
+              text-align: right;
+              min-width: 15px;
+              margin-left: 5px;
+              border-spacing: 0 7px;
+            }
+          }
+        }
+      }
+      .table_title {
+        height: 40px;
+        line-height: 40px;
+      }
+      .table_order_id,
+      .order_id {
+        min-width: 85px;
+      }
+      .order_id {
+        text-align: center;
+      }
+      .table_customer,
+      .customer {
+        min-width: 140px;
+      }
+      .table_product {
+        min-width: 190px;
+      }
+      .product_list {
+        min-width: 190px;
+        border-spacing: 0 10px;
+        li {
+          display: flex;
+          margin: 0 20px 0 10px;
+          border-bottom: 1px solid color(lightGreen);
+          &:last-child {
+            border: none;
+            margin-top: 8px;
+          }
+          p {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            > span {
+              color: color(lightGreen);
+              margin-bottom: 8px;
+            }
+          }
+          > span {
+            margin-left: auto;
+            margin-right: 10px;
+            line-height: 50px;
+          }
+        }
+      }
+      .table_total,
+      .total {
+        min-width: 75px;
+      }
+      .add_cart,
+      .check_out {
+        border-spacing: 25px 10px;
+      }
+      .table_address,
+      .address {
+        min-width: 135px;
+        text-align: left;
+      }
+      .address {
+        border-spacing: 0 10px;
+      }
+      .email {
+        border-spacing: 15px 10px;
+      }
+      .table_status {
+        min-width: 140px;
+      }
+      .status {
+        position: relative;
+        z-index: 0;
+        min-width: 140px;
+        input {
+          background-color: color(green);
+          color: color(whiteGreen);
+          border-radius: 10%;
+        }
+        .status_select {
+          position: absolute;
+          width: 125px;
+          background-color: color(whiteGreen);
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 0 10px color(darkGreen);
+          top: 25px;
+          left: 10px;
+          margin-top: 10px;
+          display: none;
+          li {
+            display: flex;
+            justify-content: center;
+            padding: 8px 0;
+            color: color(darkGreen);
+            font-size: nth($font, 2);
+            width: 100%;
+            &:hover {
+              color: color(whiteGreen);
+              background-color: color(darkGreen);
+            }
+          }
+        }
+      }
     }
   }
 }

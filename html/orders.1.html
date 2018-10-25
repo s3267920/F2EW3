@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Orders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/layout.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/orders.min.css" />
+
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1><a href="index.html">Sweetaste</a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a class="checked" href="orders.html">ORDERS</a></li>
+        <li><a href="product.html">PRODUCT</a></li>
+      </ul>
+    </nav>
+    <div class="personal"><a href="">ADMIN</a></div>
+  </header>
+  <div class="content">
+    <div class="content_head">
+      <div class="select_option">
+        <input type="checkbox" name="check" class="check_all" id="all">
+        <span class="triangle_bottom" id="check_more_option"></span>
+        <span id="check_option_icon">
+          <ul id="select_menu" class="select_menu">
+            <li><a href="">Select All</a></li>
+            <li><a href="">Unselect All</a></li>
+            <li><a href="">Paid</a></li>
+            <li><a href="">Unpaid</a></li>
+            <li><a href="">Shipping</a></li>
+            <li><a href="">Done</a></li>
+          </ul>
+      </div>
+      </span>
+
+      <div class="edit_section">
+        <a href="javascript:;">EDIT SECTION
+          <span class="triangle_bottom" id="edit_section_option"></span>
+        </a>
+        <ul id="edit_section_menu">
+          <li>
+            <input checked type="checkbox" name="edit_section" id="order_id" value="Order ID" class="order_id">
+            <label for="order_id">Order ID</label>
+          </li>
+          <li>
+            <input type="checkbox" name="edit_section" id="customer" value="Customer" class="customer" checked>
+            <label for="customer">Customer</label>
+          </li>
+          <li>
+            <input type="checkbox" name="edit_section" id="product_list" value="Product" class="product_list" checked>
+            <label for="product_list">Product</label>
+          </li>
+          <li>
+            <input type="checkbox" name="edit_section" id="total" value="Total" class="total" checked>
+            <label for="total">Total</label>
+          </li>
+          <li>
+            <input type="checkbox" name="edit_section" id="add_cart" value="Add to Cart" class="add_cart" checked>
+            <label for="add_cart">Add to Cart</label>
+          </li>
+          <li>
+            <input type="checkbox" name="edit_section" id="check_out" value="Check-out" class="check_out" checked>
+            <label for="check_out">Check-out</label>
+          </li>
+          <li>
+            <input type="checkbox" name="edit_section" id="address" value="Address" class="address" checked>
+            <label for="address">Address</label>
+          </li>
+          <li>
+            <input checked type="checkbox" name="edit_section" id="phone" value="Phone" class="phone">
+            <label for="phone">Phone</label>
+          </li>
+          <li>
+            <input checked type="checkbox" name="edit_section" id="email" value="Email" class="email">
+            <label for="email">Email</label>
+          </li>
+          <li>
+            <input type="checkbox" name="edit_section" id="status" value="Status" class="status" checked>
+            <label for="status">Status</label>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="content_table">
+      <ul>
+        <li>
+          <ul class="table_title">
+            <li class="table_order_id">Order ID</li>
+            <li class="table_customer">Customer</li>
+            <li class="table_product">Product</li>
+            <li>Total</li>
+            <li>Add to Cart</li>
+            <li>Check-out</li>
+            <li class="table_address">Address</li>
+            <li>Phone</li>
+            <li>Email</li>
+            <li class="table_status">Status</li>
+          </ul>
+        </li>
+        <li>
+          <ul class="table_data">
+            <li class="table_check"><input type="checkbox" name="check"></li>
+            <li class="order_id">10</li>
+            <li class="customer">Ian Medina</li>
+            <li class="product_list">
+              <ul>
+                <li>
+                  <p>Vestibulum.<span class="gray">$1,400</span></p>
+                  <span>1</span>
+                </li>
+                <li>
+                  <p>Fusce vehicu.<span class="gray">$800</span></p>
+                  <span>1</span>
+                </li>
+              </ul>
+            </li>
+            <li class="total">$2,200</li>
+            <li class="add_cart">2018/6/8 13:39
+            </li>
+            <li class="check_out">2018/6/8 20:23
+            </li>
+            <li class="address">386 Windler Drives Apt. 358</li>
+            <li class="phone">0123456789</li>
+            <li class="email">123@examle.com</li>
+            <li class="status">
+              <input type="button" value="PAID">
+              <!-- <ul>
+                <li>Paid</li>
+                <li>Unpaid</li>
+                <li>Shipping</li>
+                <li>Done</li>
+              </ul> -->
+            </li>
+
+          </ul>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+    </div>
+
+
+  </div>
+  <footer></footer>
+  <script src="../js/orders.js"></script>
+</body>
+
+</html>
