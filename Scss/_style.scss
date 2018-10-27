@@ -6,27 +6,27 @@ $color: (
   skyblue: #4a90e2,
   green: #7ed321,
   // whitegray: #f2f2f2,
-  // lightgray: #e1e1e1,
-  // gray: #c8c8c8,
-  // darkgray: #757575,
+    // lightgray: #e1e1e1,
+    // gray: #c8c8c8,
+    // darkgray: #757575,
+    gray: #9b9b9b,
   white: #fff,
   black: #000,
   yellow: #ffe180,
   darkGreen: #3f5d45,
   whiteGreen: #f9fbfa,
-  lightGreen: #8da291,
+  lightGreen: #8da291
 );
-
 
 $font: 14px 16px 20px 24px 36px;
 
 //rwd
 
-$wide: "min-width: 1800px" !default;
-$desktop: "min-width: 1200px" !default;
-$tablet-landscape: "min-width: 900px" !default;
-$tablet-protrait: "min-width: 600px" !default;
-$phone: "max-width: 600px" !default;
+$wide: 'min-width: 1800px' !default;
+$desktop: 'min-width: 1200px' !default;
+$tablet-landscape: 'min-width: 900px' !default;
+$tablet-protrait: 'min-width: 600px' !default;
+$phone: 'max-width: 600px' !default;
 
 @mixin background-img($center: center) {
   background-position: $center;
@@ -36,11 +36,11 @@ $phone: "max-width: 600px" !default;
 
 @mixin flexcenter {
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 %numberStyle {
-  font-size: nth($font,5);
+  font-size: nth($font, 5);
   margin-top: 16px;
   font-weight: bold;
 }
@@ -51,7 +51,6 @@ $phone: "max-width: 600px" !default;
   }
 }
 
-@function color($type:green){
+@function color($type: green) {
   @return map-get($color, $type);
-  
 }

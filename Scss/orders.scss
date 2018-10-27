@@ -23,6 +23,8 @@ a {
       position: relative;
     }
     .select_option {
+      position: relative;
+      z-index: 5;
       color: color(lightGreen);
       display: inline-flex;
       align-items: center;
@@ -117,56 +119,51 @@ a {
     }
   }
   .content_table {
+    position: relative;
     margin: 0 4%;
-    // height: 1000px;
-    overflow: hidden;
-    overflow-x: scroll;
-    .table {
-      table {
-        color: color(darkGreen);
-        table-layout: auto;
-        word-break: keep-all;
-        tr {
-          white-space: nowrap;
-          border-spacing: 10px;
-          border: 1px solid #000;
-          th {
-            height: 40px;
-            text-align: left;
-            background-color: color(yellow);
-            display: inline-table;
-            min-width: 120px;
-            border-collapse: separate;
-            border-spacing: 10px 0;
-            &:first-child {
-              vertical-align: top;
-              min-width: 20px;
-              border-spacing: 0;
-            }
-          }
-          td {
-            line-height: 150%;
-            font-size: nth($font, 1);
-            text-align: left;
-            display: inline-table;
-            min-width: 120px;
-            max-width: 120px;
-            word-break: break-all;
-            white-space: normal;
-            border-collapse: separate;
-            border-spacing: 10px;
-            &:first-child {
-              font-size: 16px;
-              text-align: right;
-              min-width: 15px;
-              margin-left: 5px;
-              border-spacing: 0 7px;
-            }
+    height: auto;
+    overflow: auto;
+    overflow-y: hidden;
+    table {
+      color: color(darkGreen);
+      table-layout: auto;
+      word-break: keep-all;
+      tr {
+        white-space: nowrap;
+        border-spacing: 10px;
+        th {
+          height: 40px;
+          text-align: left;
+          background-color: color(yellow);
+          display: inline-table;
+          min-width: 120px;
+          border-collapse: separate;
+          border-spacing: 10px 0;
+          &:first-child {
+            vertical-align: top;
+            min-width: 20px;
+            border-spacing: 0;
           }
         }
-      }
-      .lightgreen {
-        background-color: adjust-color(color(lightGreen), $lightness: 30%);
+        td {
+          line-height: 150%;
+          font-size: nth($font, 1);
+          text-align: left;
+          display: inline-table;
+          min-width: 120px;
+          max-width: 120px;
+          word-break: break-all;
+          white-space: normal;
+          border-collapse: separate;
+          border-spacing: 10px;
+          &:first-child {
+            font-size: 16px;
+            text-align: right;
+            min-width: 15px;
+            margin-left: 5px;
+            border-spacing: 0 7px;
+          }
+        }
       }
       .table_title {
         height: 40px;
@@ -191,11 +188,11 @@ a {
         border-spacing: 0 10px;
         li {
           display: flex;
-          margin: 0 20px 0 10px;
+          margin: 0 20px 10px 10px;
           border-bottom: 1px solid color(lightGreen);
           &:last-child {
             border: none;
-            margin-top: 8px;
+            margin-bottom: 0px;
           }
           p {
             display: inline-flex;
@@ -228,7 +225,7 @@ a {
         text-align: left;
       }
       .address {
-        border-spacing: 0 10px;
+        border-spacing: 5px 10px;
       }
       .email {
         border-spacing: 15px 10px;
@@ -238,15 +235,37 @@ a {
       }
       .status {
         position: relative;
-
         min-width: 140px;
-        input {
-          z-index: 0;
+        vertical-align: top;
+        button {
+          display: flex;
+          align-items: center;
+          padding: 0 15px;
+
+          cursor: pointer;
           background-color: color(green);
           color: color(whiteGreen);
-          border-radius: 10%;
+          border-radius: 5px;
+          line-height: 34px;
           outline: none;
           box-shadow: none;
+          border: none;
+          font-weight: bold;
+          .triangle_bottom {
+            margin-left: 5px;
+            border-top: 4px solid color(whiteGreen);
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+          }
+          .triangle_top {
+            margin-left: 5px;
+            border-bottom: 4px solid color(whiteGreen);
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+          }
+          &:active {
+            box-shadow: 0 0 5px color(lightGreen);
+          }
         }
         .status_select {
           position: absolute;
@@ -255,23 +274,65 @@ a {
           background-color: color(whiteGreen);
           flex-direction: column;
           box-shadow: 0 0 10px color(darkGreen);
-          top: 25px;
-          left: 10px;
+          top: 43px;
+          left: 11px;
           margin-top: 10px;
           display: none;
+
           li {
             display: flex;
             justify-content: center;
-            padding: 8px 0;
+            padding: 5px 0;
             color: color(darkGreen);
             font-size: nth($font, 2);
             width: 100%;
-            &:hover {
+            &:hover,
+            &:focus {
               color: color(whiteGreen);
               background-color: color(darkGreen);
             }
           }
         }
+      }
+    }
+    .table {
+      .lightgreen {
+        background-color: adjust-color(color(lightGreen), $lightness: 30%);
+      }
+      .green {
+        background-color: color(green);
+      }
+      .orange {
+        background-color: color(orange);
+      }
+      .skyblue {
+        background-color: color(skyblue);
+      }
+      .gray {
+        background-color: color(gray);
+      }
+      .doneStyle {
+        text-decoration: line-through;
+      }
+      .unpaidStyle {
+        color: color(lightGreen);
+      }
+    }
+  }
+  .content_page {
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px 0 40px 0;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #000;
+      img {
+        width: 10px;
+        height: 8px;
       }
     }
   }

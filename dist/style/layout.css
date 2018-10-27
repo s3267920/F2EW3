@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
   v2.0 | 20110126
   License: none (public domain)
@@ -472,6 +473,7 @@ template {
 body {
   margin: 0 auto;
   max-width: 1024px;
+  font-family: 'Microsoft JhengHei', '微軟正黑體', 'PingFang';
 }
 
 a {

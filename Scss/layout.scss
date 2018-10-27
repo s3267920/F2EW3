@@ -1,9 +1,10 @@
-@import "_reset";
-@import "_style";
+@import '_reset';
+@import '_style';
 
 body {
   margin: 0 auto;
   max-width: 1024px;
+  font-family: 'Microsoft JhengHei', '微軟正黑體', 'PingFang';
 }
 a {
   text-decoration: none;
@@ -11,7 +12,10 @@ a {
 
 header {
   height: 70px;
-  background-color: adjust-color($color: map-get($color, darkGreen), $lightness: 5%);
+  background-color: adjust-color(
+    $color: map-get($color, darkGreen),
+    $lightness: 5%
+  );
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -38,7 +42,10 @@ header {
       padding: 0 10px;
       a {
         padding: 25px 10px;
-        color: adjust-color($color: map-get($color, lightGreen), $lightness: 15%);
+        color: adjust-color(
+          $color: map-get($color, lightGreen),
+          $lightness: 15%
+        );
         font-weight: 600;
         &:hover,
         &:focus,
