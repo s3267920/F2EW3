@@ -29,8 +29,10 @@
     <div class="content_head">
       <div class="select_option">
         <input type="checkbox" name="check" class="check_all" id="all">
+        <label for="all"></label>
         <span class="triangle_bottom" id="check_more_option"></span>
         <span id="check_option_icon">
+          <div class="tooltip">Change Status</div>
           <ul id="select_menu" class="select_menu">
             <li><a href="javascript:;" class="select_all">Select All</a></li>
             <li><a href="javascript:;" class="unselect_all">Unselect All</a></li>
@@ -47,7 +49,7 @@
         </a>
         <ul id="edit_section_menu">
           <li>
-            <input type="checkbox" name="edit_section" id="order_id" value="Order ID" class="order_id">
+            <input type="checkbox" name="edit_section" value="Order ID" class="order_id">
             <label for="order_id">Order ID</label>
           </li>
           <li>
@@ -108,8 +110,11 @@
           </tr>
 
           <tr>
-            <td class="table_check"><input type="checkbox" name="check"></td>
-            <td class="order_id">10</td>
+            <td class="table_check">
+              <input type="checkbox" name="check">
+              <label></label>
+            </td>
+            <td class="order_id">9</td>
             <td class="customer">Ian Medina</td>
             <td class="product_list">
               <ul>
@@ -152,7 +157,10 @@
             </td>
           </tr>
           <tr>
-            <td class="table_check"><input type="checkbox" name="check"></td>
+            <td class="table_check">
+              <input type="checkbox" name="check">
+              <label></label>
+            </td>
             <td class="order_id">10</td>
             <td class="customer">Manuel Stephens</td>
             <td class="product_list">
@@ -192,8 +200,11 @@
             </td>
           </tr>
           <tr>
-            <td class="table_check"><input type="checkbox" name="check"></td>
-            <td class="order_id" id="order_id">10</td>
+            <td class="table_check">
+              <input type="checkbox" name="check">
+              <label></label>
+            </td>
+            <td class="order_id">11</td>
             <td class="customer">Daisy Reynolds</td>
             <td class="product_list">
               <ul>
@@ -240,8 +251,11 @@
             </td>
           </tr>
           <tr>
-            <td class="table_check"><input type="checkbox" name="check"></td>
-            <td class="order_id" id="order_id">10</td>
+            <td class="table_check">
+              <input type="checkbox" name="check">
+              <label></label>
+            </td>
+            <td class="order_id">12</td>
             <td class="customer">Daisy Reynolds</td>
             <td class="product_list">
               <ul>
@@ -284,8 +298,11 @@
             </td>
           </tr>
           <tr>
-            <td class="table_check"><input type="checkbox" name="check"></td>
-            <td class="order_id" id="order_id">10</td>
+            <td class="table_check">
+              <input type="checkbox" name="check">
+              <label></label>
+            </td>
+            <td class="order_id">13</td>
             <td class="customer">Daisy Reynolds</td>
             <td class="product_list">
               <ul>
@@ -333,21 +350,16 @@
             </td>
           </tr>
           <tr>
-            <td class="table_check"><input type="checkbox" name="check"></td>
-            <td class="order_id" id="order_id">10</td>
+            <td class="table_check">
+              <input type="checkbox" name="check">
+              <label></label>
+            </td>
+            <td class="order_id">14</td>
             <td class="customer">Daisy Reynolds</td>
             <td class="product_list">
               <ul>
                 <li>
                   <p>Curabitur lo.<span>$1,400</span></p>
-                  <span>1</span>
-                </li>
-                <li>
-                  <p>Donec facili.<span>$800</span></p>
-                  <span>1</span>
-                </li>
-                <li>
-                  <p>Nam porttito.<span>$800</span></p>
                   <span>1</span>
                 </li>
               </ul>
@@ -382,20 +394,26 @@
           </tr>
         </table>
       </div>
-      <ul class="content_page">
-        <a href="">
-          <li> <img src="../img/angle-double-left.svg"> </li>
-        </a>
-        <a href="">
-          <li>1</li>
-        </a>
-        <a href="">
-          <li><img src="../img/angle-double-right.svg"></li>
-        </a>
-      </ul>
-
     </div>
-
+    <ul class="content_page">
+      <a href="">
+        <li class="go_back">
+          <!-- <img src="../img/angle-double-left.svg">
+            <img src="../img/angle-double-left-white.svg"> -->
+          <span></span>
+        </li>
+      </a>
+      <a href="">
+        <li>1</li>
+      </a>
+      <a href="">
+        <li class="go_ahead">
+          <!-- <img src="../img/angle-double-right.svg">
+            <img src="../img/angle-double-right-white.svg"> -->
+          <span></span>
+        </li>
+      </a>
+    </ul>
 
   </div>
   <footer></footer>

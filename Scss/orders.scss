@@ -4,7 +4,9 @@ a {
 }
 .content {
   width: 100%;
+  height: 100%;
   background-color: color(whiteGreen);
+  padding-bottom: 40px;
   .content_head {
     display: flex;
     margin: 0 4%;
@@ -21,14 +23,48 @@ a {
       width: 19px;
       margin-left: 15px;
       position: relative;
+      .tooltip {
+        position: absolute;
+        top: 30px;
+        left: -45px;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        font-size: nth($font, 1);
+        height: 29px;
+        padding: 0px 10px;
+        background-color: color(darkGreen);
+        color: color(whiteGreen);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s;
+        &::after {
+          content: '';
+          position: absolute;
+          top: -12px;
+          left: 50px;
+          border-top: 4px solid transparent;
+          border-bottom: 8px solid color(darkGreen);
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+        }
+      }
+      &:hover {
+        .tooltip {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
     }
     .select_option {
       position: relative;
+      height: 15px;
       z-index: 5;
       color: color(lightGreen);
       display: inline-flex;
       align-items: center;
       margin: 0 8px;
+
       a {
         color: color(lightGreen);
       }
@@ -64,6 +100,39 @@ a {
             }
           }
         }
+        .has_check {
+          background-color: color(yellow);
+        }
+      }
+      label {
+        position: absolute;
+        bottom: -1px;
+        left: 0px;
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        display: inline-block;
+        border: 1px solid color(lightGreen);
+        &::after {
+          content: none;
+          position: absolute;
+          bottom: 6px;
+          left: 3px;
+          width: 8px;
+          height: 4px;
+          transform: rotate(-45deg);
+          border-bottom: 2px solid color(whiteGreen);
+          border-left: 2px solid color(whiteGreen);
+        }
+      }
+      input {
+        visibility: hidden;
+      }
+      input:checked + label {
+        background-color: color(darkGreen);
+        &::after {
+          content: '';
+        }
       }
     }
     .triangle_bottom {
@@ -77,7 +146,6 @@ a {
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
     }
-
     .edit_section {
       margin: 0 8px;
       position: relative;
@@ -119,12 +187,14 @@ a {
     }
   }
   .content_table {
+    user-select: none; //禁止選取
     position: relative;
     margin: 0 4%;
     height: auto;
     overflow: auto;
     overflow-y: hidden;
     table {
+      position: relative;
       color: color(darkGreen);
       table-layout: auto;
       word-break: keep-all;
@@ -160,14 +230,58 @@ a {
             font-size: 16px;
             text-align: right;
             min-width: 15px;
-            margin-left: 5px;
+            margin-left: 7px;
             border-spacing: 0 7px;
+          }
+        }
+        &:last-child {
+          .status_select {
+            top: -185px;
+            left: 11px;
           }
         }
       }
       .table_title {
         height: 40px;
         line-height: 40px;
+      }
+
+      .table_check {
+        position: relative;
+        input {
+          visibility: hidden;
+        }
+        label {
+          position: absolute;
+          z-index: 2;
+          bottom: 10px;
+          left: 1px;
+          width: 15px;
+          height: 15px;
+          border-radius: 3px;
+          display: inline-block;
+          background-color: adjust-color(color(yellow), $lightness: 10%);
+          // &:hover {
+          //   background-color: color(darkGreen);
+          // }
+          &::after {
+            content: none;
+            position: absolute;
+            bottom: 6px;
+            left: 3px;
+            width: 8px;
+            height: 4px;
+            transform: rotate(-45deg);
+            border-bottom: 2px solid color(whiteGreen);
+            border-left: 2px solid color(whiteGreen);
+          }
+        }
+        input:checked + label {
+          background-color: color(darkGreen);
+          &::after {
+            content: '';
+          }
+        }
       }
       .table_order_id,
       .order_id {
@@ -241,7 +355,6 @@ a {
           display: flex;
           align-items: center;
           padding: 0 15px;
-
           cursor: pointer;
           background-color: color(green);
           color: color(whiteGreen);
@@ -268,6 +381,7 @@ a {
           }
         }
         .status_select {
+          animation: selectMove 0.4s ease-in-out;
           position: absolute;
           z-index: 2;
           width: 125px;
@@ -278,7 +392,6 @@ a {
           left: 11px;
           margin-top: 10px;
           display: none;
-
           li {
             display: flex;
             justify-content: center;
@@ -291,6 +404,14 @@ a {
               color: color(whiteGreen);
               background-color: color(darkGreen);
             }
+          }
+        }
+        @keyframes selectMove {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
           }
         }
       }
@@ -322,17 +443,51 @@ a {
   .content_page {
     display: flex;
     justify-content: flex-end;
-    margin: 30px 0 40px 0;
+    margin-right: 4%;
+    margin-top: 30px;
     li {
       display: flex;
       justify-content: center;
       align-items: center;
+      color: color(darkGreen);
       width: 40px;
       height: 40px;
-      border: 1px solid #000;
-      img {
-        width: 10px;
+      background-color: color(white);
+      border: 1px solid color(lightGreen);
+      &:hover {
+        background-color: color(darkGreen);
+        color: color(whiteGreen);
+      }
+    }
+    .go_back {
+      border-radius: 5px 0 0 5px;
+      border-right: none;
+      span {
+        @include background-img;
+        width: 8px;
         height: 8px;
+        background-image: url(../img/angle-double-left.svg);
+      }
+      &:hover {
+        span {
+          background-image: url(../img/angle-double-left-white.svg);
+        }
+      }
+    }
+
+    .go_ahead {
+      border-radius: 0px 5px 5px 0;
+      border-left: none;
+      span {
+        @include background-img;
+        width: 8px;
+        height: 8px;
+        background-image: url(../img/angle-double-right.svg);
+      }
+      &:hover {
+        span {
+          background-image: url(../img/angle-double-right-white.svg);
+        }
       }
     }
   }

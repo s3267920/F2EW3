@@ -4,7 +4,9 @@ a {
 
 .content {
   width: 100%;
+  height: 100%;
   background-color: #f9fbfa;
+  padding-bottom: 40px;
 }
 
 .content .content_head {
@@ -38,8 +40,47 @@ a {
   position: relative;
 }
 
+.content .content_head #check_option_icon .tooltip {
+  position: absolute;
+  top: 30px;
+  left: -45px;
+  white-space: nowrap;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  height: 29px;
+  padding: 0px 10px;
+  background-color: #3f5d45;
+  color: #f9fbfa;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.content .content_head #check_option_icon .tooltip::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50px;
+  border-top: 4px solid transparent;
+  border-bottom: 8px solid #3f5d45;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.content .content_head #check_option_icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
 .content .content_head .select_option {
   position: relative;
+  height: 15px;
   z-index: 5;
   color: #8da291;
   display: -webkit-inline-box;
@@ -101,6 +142,46 @@ a {
 .content .content_head .select_option ul li a:hover, .content .content_head .select_option ul li a:focus {
   background-color: #3f5d45;
   color: #f9fbfa;
+}
+
+.content .content_head .select_option ul .has_check {
+  background-color: #ffe180;
+}
+
+.content .content_head .select_option label {
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+  border: 1px solid #8da291;
+}
+
+.content .content_head .select_option label::after {
+  content: none;
+  position: absolute;
+  bottom: 6px;
+  left: 3px;
+  width: 8px;
+  height: 4px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border-bottom: 2px solid #f9fbfa;
+  border-left: 2px solid #f9fbfa;
+}
+
+.content .content_head .select_option input {
+  visibility: hidden;
+}
+
+.content .content_head .select_option input:checked + label {
+  background-color: #3f5d45;
+}
+
+.content .content_head .select_option input:checked + label::after {
+  content: '';
 }
 
 .content .content_head .triangle_bottom {
@@ -176,6 +257,10 @@ a {
 }
 
 .content .content_table {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: relative;
   margin: 0 4%;
   height: auto;
@@ -184,6 +269,7 @@ a {
 }
 
 .content .content_table table {
+  position: relative;
   color: #3f5d45;
   table-layout: auto;
   word-break: keep-all;
@@ -227,13 +313,59 @@ a {
   font-size: 16px;
   text-align: right;
   min-width: 15px;
-  margin-left: 5px;
+  margin-left: 7px;
   border-spacing: 0 7px;
+}
+
+.content .content_table table tr:last-child .status_select {
+  top: -185px;
+  left: 11px;
 }
 
 .content .content_table table .table_title {
   height: 40px;
   line-height: 40px;
+}
+
+.content .content_table table .table_check {
+  position: relative;
+}
+
+.content .content_table table .table_check input {
+  visibility: hidden;
+}
+
+.content .content_table table .table_check label {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  display: inline-block;
+  background-color: #ffedb3;
+}
+
+.content .content_table table .table_check label::after {
+  content: none;
+  position: absolute;
+  bottom: 6px;
+  left: 3px;
+  width: 8px;
+  height: 4px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border-bottom: 2px solid #f9fbfa;
+  border-left: 2px solid #f9fbfa;
+}
+
+.content .content_table table .table_check input:checked + label {
+  background-color: #3f5d45;
+}
+
+.content .content_table table .table_check input:checked + label::after {
+  content: '';
 }
 
 .content .content_table table .table_order_id,
@@ -373,6 +505,8 @@ a {
 }
 
 .content .content_table table .status .status_select {
+  -webkit-animation: selectMove 0.4s ease-in-out;
+          animation: selectMove 0.4s ease-in-out;
   position: absolute;
   z-index: 2;
   width: 125px;
@@ -405,6 +539,24 @@ a {
 .content .content_table table .status .status_select li:hover, .content .content_table table .status .status_select li:focus {
   color: #f9fbfa;
   background-color: #3f5d45;
+}
+
+@-webkit-keyframes selectMove {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes selectMove {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .content .content_table .table .lightgreen {
@@ -442,7 +594,8 @@ a {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin: 30px 0 40px 0;
+  margin-right: 4%;
+  margin-top: 30px;
 }
 
 .content .content_page li {
@@ -455,13 +608,51 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #3f5d45;
   width: 40px;
   height: 40px;
-  border: 1px solid #000;
+  background-color: #fff;
+  border: 1px solid #8da291;
 }
 
-.content .content_page li img {
-  width: 10px;
+.content .content_page li:hover {
+  background-color: #3f5d45;
+  color: #f9fbfa;
+}
+
+.content .content_page .go_back {
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.content .content_page .go_back span {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 8px;
   height: 8px;
+  background-image: url(../img/angle-double-left.svg);
+}
+
+.content .content_page .go_back:hover span {
+  background-image: url(../img/angle-double-left-white.svg);
+}
+
+.content .content_page .go_ahead {
+  border-radius: 0px 5px 5px 0;
+  border-left: none;
+}
+
+.content .content_page .go_ahead span {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 8px;
+  height: 8px;
+  background-image: url(../img/angle-double-right.svg);
+}
+
+.content .content_page .go_ahead:hover span {
+  background-image: url(../img/angle-double-right-white.svg);
 }
 /*# sourceMappingURL=orders.css.map */
