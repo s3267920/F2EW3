@@ -23,11 +23,9 @@
     tableCheckbox[id].setAttribute('id', tableLabelId);
     //label設置連動
     tableLabel[id].addEventListener('click', () => {
-      let tableLabelCheckbox =
-        tableLabel[id].parentNode.parentNode.children[0].children[0];
-      tableLabelCheckbox.checked
-        ? tableLabelCheckbox.removeAttribute('checked', 'checked')
-        : tableLabelCheckbox.setAttribute('checked', 'checked');
+      tableCheckbox[id].checked
+        ? tableCheckbox[id].setAttribute('checked', 'checked')
+        : tableCheckbox[id].removeAttribute('checked', 'checked');
     });
   }
   //勾選後出現標籤圖樣
