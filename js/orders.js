@@ -235,11 +235,8 @@
                 (statusLiBtn.parentNode.value = 'DONE'),
                 color());
       });
-      // console.log(statusBtn[j].parentElement.parentElement);
     }
-
     color();
-    // console.log(statusBtn[j]).parentElement.parentElement.children[i]);
   }
   //換頁部分
   let pageChangeUl = document.querySelector('.content_page');

@@ -2,35 +2,248 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Product</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../style/layout.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../style/product.min.css" />
-    <script src="main.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Product</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/layout.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/product.min.css" />
+
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1><a href="index.html">Sweetaste</a></h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="orders.html">ORDERS</a></li>
-                <li><a class="checked" href="product.html">PRODUCT</a></li>
+  <header>
+    <div class="logo">
+      <h1><a href="index.html">Sweetaste</a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="orders.html">ORDERS</a></li>
+        <li><a class="checked" href="product.html">PRODUCT</a></li>
+      </ul>
+    </nav>
+    <div class="personal"><a href="">ADMIN</a></div>
+  </header>
+  <div class="product_content">
+    <div class="content_head">
+      <div class="product_select_option">
+        <input type="checkbox" name="check" class="check_all" id="all">
+        <label for="all"></label>
+        <span class="triangle_bottom" id="check_more_option"></span>
+        <span id="check_option_icon">
+          <div class="tooltip">Change Status</div>
+          <ul id="select_menu" class="select_menu">
+            <li><a href="javascript:;" class="select_all">Select All</a></li>
+            <li><a href="javascript:;" class="unselect_all">Unselect All</a></li>
+            <li><a href="javascript:;" class="Published">Published</a></li>
+            <li><a href="javascript:;" class="Unpublished">Unpublished</a></li>
+          </ul>
+        </span>
+      </div>
+      <button class="add_product_btn">ADD NEW PRODUCT<span>＋</span></button>
+    </div>
+    <table class="product_table">
+      <tr>
+        <th></th>
+        <th class="table_product">Product</th>
+        <th>Original</th>
+        <th>Discount</th>
+        <th class="information_size">Size</th>
+        <th class="information_flavor">Flavor</th>
+        <th class="information_inventory">Inventory</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td class="table_checkbox">
+          <input type="checkbox" name="" id="">
+          <label for=""></label>
+        </td>
+        <td class="product">
+          <img src="https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=634&q=80">
+          <span>甜甜圈</span>
+        </td>
+        <td class="original">$500</td>
+        <td class="discount">$450</td>
+        <td class="information">
+          <ul>
+            <li>
+              <div class="size">L</div>
+              <ul class="flavor">
+                <li>香草</li>
+                <li>焦糖</li>
+              </ul>
+              <ul class="inventory">
+                <li>15</li>
+                <li>20</li>
+              </ul>
+            </li>
+            <li>
+              <div class="size">M</div>
+              <ul class="flavor">
+                <li>香草</li>
+                <li>焦糖</li>
+              </ul>
+              <ul class="inventory">
+                <li>15</li>
+                <li>20</li>
+              </ul>
+            </li>
+            <li>
+              <div class="size">S</div>
+              <ul class="flavor">
+                <li>香草</li>
+                <li>焦糖</li>
+              </ul>
+              <ul class="inventory">
+                <li>15</li>
+                <li>20</li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+        <td class="status">
+          <button class="status_Btn" value="PUBLISHED">PUBLISHED<span class="triangle_bottom"></span>
+            <ul class="status_option">
+              <a href="javascript:;" class="Published">
+                <li>Published</li>
+              </a>
+              <a href="javascript:;" class="Unpublished">
+                <li>Unpublished</li>
+              </a>
             </ul>
-        </nav>
-        <div class="personal"><a href="">ADMIN</a></div>
-    </header>
-    <div class="content">
+          </button>
 
-    </div>
-    <div id="footer">
+        </td>
+      </tr>
+      <tr>
+        <td class="table_checkbox">
+          <input type="checkbox" name="" id="">
+          <label for=""></label>
+        </td>
+        <td class="product">
+          <img src="https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=634&q=80">
+          <span>甜甜圈</span>
+        </td>
+        <td class="original">$500</td>
+        <td class="discount">$450</td>
+        <td class="information">
+          <ul>
+            <li>
+              <div class="size">L</div>
+              <ul class="flavor">
+                <li>香草</li>
+                <li>焦糖</li>
+              </ul>
+              <ul class="inventory">
+                <li>15</li>
+                <li>20</li>
+              </ul>
+            </li>
+            <li>
+              <div class="size">M</div>
+              <ul class="flavor">
+                <li>香草</li>
+                <li>焦糖</li>
+              </ul>
+              <ul class="inventory">
+                <li>15</li>
+                <li>20</li>
+              </ul>
+            </li>
+            <li>
+              <div class="size">S</div>
+              <ul class="flavor">
+                <li>香草</li>
+                <li>焦糖</li>
+              </ul>
+              <ul class="inventory">
+                <li>15</li>
+                <li>20</li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+        <td class="status">
+          <button class="status_Btn" value="PUBLISHED">PUBLISHED<span class="triangle_bottom"></span>
+            <ul class="status_option">
+              <a href="javascript:;" class="Published">
+                <li>Published</li>
+              </a>
+              <a href="javascript:;" class="Unpublished">
+                <li>Unpublished</li>
+              </a>
+            </ul>
+          </button>
 
-    </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="table_checkbox">
+          <input type="checkbox" name="" id="">
+          <label for=""></label>
+        </td>
+        <td class="product">
+          <img src="https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=634&q=80">
+          <span>甜甜圈</span>
+        </td>
+        <td class="original">$500</td>
+        <td class="discount">$450</td>
+        <td class="information">
+          <ul>
+            <li>
+              <div class="size">L</div>
+              <ul class="flavor">
+                <li>香草</li>
+                <li>焦糖</li>
+              </ul>
+              <ul class="inventory">
+                <li>15</li>
+                <li>20</li>
+              </ul>
+            </li>
+            <li>
+              <div class="size">M</div>
+              <ul class="flavor">
+                <li>香草</li>
+                <li>焦糖</li>
+              </ul>
+              <ul class="inventory">
+                <li>15</li>
+                <li>20</li>
+              </ul>
+            </li>
+            <li>
+              <div class="size">S</div>
+              <ul class="flavor">
+                <li>香草</li>
+                <li>焦糖</li>
+              </ul>
+              <ul class="inventory">
+                <li>15</li>
+                <li>20</li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+        <td class="status">
+          <button class="status_Btn" value="UNPUBLISHED">UNPUBLISHED<span class="triangle_bottom"></span>
+            <ul class="status_option">
+              <a href="javascript:;" class="Published">
+                <li>Published</li>
+              </a>
+              <a href="javascript:;" class="Unpublished">
+                <li>Unpublished</li>
+              </a>
+            </ul>
+          </button>
+
+        </td>
+      </tr>
+    </table>
+  </div>
+  <footer></footer>
+  <script src="../js/product.js"></script>
 </body>
 
 </html>
