@@ -42,6 +42,58 @@
         </span>
       </div>
       <button class="add_product_btn">ADD NEW PRODUCT<span>＋</span></button>
+      <div class="add_modal">
+        <div class="modal">
+          <div class="modal_head">
+            <h3>ADD NEW PRODUCT</h1>
+              <label for="close_reset" class="close_btn">
+              </label>
+          </div>
+          <div class="modal_content">
+            <div class="add_image">
+              <form action="#" enctype="multipart/form-data">
+                <input type="file" name="files[]" id="addImage" accept="image/*" required="required">
+                <label for="addImage"> <img src="../img/cloud-upload-alt.svg"> Drag an image or click here to upload…</label>
+                <div class="image_previews">
+                </div>
+              </form>
+            </div>
+            <div class="add_information">
+              <form action="#">
+                <label for="">Product Discription </label>
+                <input type="text" id="product_name" placeholder="Tiltle" value="" required="required">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Discription"></textarea>
+                <label for="">Price</label>
+                <div class="info_price">
+                  <label for="original"><span>Original</span><input type="text" id="original" required="required"></label>
+                  <label for="discount"><span>Discount</span><input type="text" id="discount" required="required"></label>
+                </div>
+                <label for="">Specification</label>
+                <div class="specification_info">
+                  <label for="size0">
+                    <span>Size</span>
+                    <select name="size" id="size0">
+                      <option value="L">L</option>
+                      <option value="M">M</option>
+                      <option value="S">S</option>
+                    </select>
+                  </label>
+                  <label for="flavor0"><span>Flavor</span><input type="text" required="required" id="flavor0"></label>
+                  <label for="inventory0"><span>Inventory</span><input type="text" required="required" id="inventory0"></label>
+                </div>
+                <button type="button" class="add_new_btn">ADD NEW SPECIFICATION <img src="../img/ic_add.svg"></button>
+                <input type="reset" id="close_reset" value="">
+                <div class="submit_btn">
+                  <a href="javascript:;" id="save_draft">SAVE DRAFT</a>
+                  <button type="submit" id="submit_btn">PUBLISH</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <table class="product_table">
       <tr>
@@ -111,6 +163,9 @@
               <a href="javascript:;" class="Unpublished">
                 <li>Unpublished</li>
               </a>
+              <a href="javascript:;" class="delect">
+                <li>Delect</li>
+              </a>
             </ul>
           </button>
 
@@ -173,6 +228,9 @@
               <a href="javascript:;" class="Unpublished">
                 <li>Unpublished</li>
               </a>
+              <a href="javascript:;" class="delect">
+                <li>Delect</li>
+              </a>
             </ul>
           </button>
 
@@ -234,6 +292,9 @@
               </a>
               <a href="javascript:;" class="Unpublished">
                 <li>Unpublished</li>
+              </a>
+              <a href="javascript:;" class="delect">
+                <li>Delect</li>
               </a>
             </ul>
           </button>
