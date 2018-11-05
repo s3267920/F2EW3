@@ -3,44 +3,72 @@
     {
       "id": 1,
       "name": "焦糖甜甜圈",
-      "price": 450,
-      "src": "https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=634&q=80"
+      "original": 500,
+      "discount": 450,
+      "src": "https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=634&q=80",
+      "size": ["L", "M", "S"],
+      "flavor": ["香草", "焦糖"],
+      "inventory": [15, 20]
     },
     {
       "id": 2,
       "name": "初戀的滋味",
-      "price": 450,
-      "src": "https://images.unsplash.com/photo-1525203135335-74d272fc8d9c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=61b27d2cefd0dd094b5439f897b43bb7&auto=format&fit=crop&w=1600&q=80"
+      "original": 500,
+      "discount": 450,
+      "src": "https://images.unsplash.com/photo-1525203135335-74d272fc8d9c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=61b27d2cefd0dd094b5439f897b43bb7&auto=format&fit=crop&w=1600&q=80",
+      "size": ["L", "M", "S"],
+      "flavor": ["香草", "焦糖"],
+      "inventory": [15, 20]
     },
     {
       "id": 3,
       "name": "馬卡佐咖啡",
-      "price": 450,
-      "src": "https://bit.ly/2R5tqwD"
+      "original": 500,
+      "discount": 450,
+      "src": "https://bit.ly/2R5tqwD",
+      "size": ["L", "M", "S"],
+      "flavor": ["香草", "焦糖"],
+      "inventory": [15, 20]
     },
     {
       "id": 4,
       "name": "野莓有百香",
-      "price": 450,
-      "src": "https://bit.ly/2QbVsVR"
-    },
-    {
-      "id": 6,
-      "name": "聖誕蘋果塔",
-      "price": 450,
-      "src": "https://bit.ly/2Qodh3Z"
-    },
-    {
-      "id": 7,
-      "name": "奶油橘香塔",
-      "price": 450,
-      "src": "https://bit.ly/2Dwoxd7"
+      "original": 500,
+      "discount": 450,
+      "src": "https://bit.ly/2QbVsVR",
+      "size": ["L", "M", "S"],
+      "flavor": ["香草", "焦糖"],
+      "inventory": [15, 20]
     },
     {
       "id": 5,
+      "name": "聖誕蘋果塔",
+      "original": 500,
+      "discount": 450,
+      "src": "https://bit.ly/2Qodh3Z",
+      "size": ["L", "M", "S"],
+      "flavor": ["香草", "焦糖"],
+      "inventory": [15, 20]
+    },
+    {
+      "id": 6,
+      "name": "奶油橘香塔",
+      "original": 500,
+      "discount": 450,
+      "src": "https://bit.ly/2Dwoxd7",
+      "size": ["L", "M", "S"],
+      "flavor": ["香草", "焦糖"],
+      "inventory": [15, 20]
+    },
+    {
+      "id": 7,
       "name": "奇異交響曲",
-      "price": 450,
-      "src": "https://bit.ly/2QiWeQW"
+      "original": 500,
+      "discount": 450,
+      "src": "https://bit.ly/2QiWeQW",
+      "size": ["L", "M", "S"],
+      "flavor": ["香草", "焦糖"],
+      "inventory": [15, 20]
     }
   ]
 }

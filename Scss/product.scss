@@ -172,8 +172,8 @@ a {
   //互動式視窗
   .add_modal {
     position: fixed;
-    // display: none;
-    display: flex;
+    display: none;
+    // display: flex;
     justify-content: center;
     z-index: 999;
     left: 0%;

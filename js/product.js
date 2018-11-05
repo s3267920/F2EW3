@@ -11,6 +11,7 @@
   //表格部分
   let statusBtn = document.querySelectorAll('.status_Btn');
   let selectOption = document.querySelectorAll('.status_option');
+
   let trLightGreen = () => {
     for (let tr = 1; tr < tableTr.length; tr++) {
       if (tableTr[tr].rowIndex % 2 === 0) {
@@ -79,6 +80,9 @@
   statusColor();
   //check選單
   for (let i = 0; i < tableCheckboxLabel.length; i++) {
+    let tableCheckboxId = 'product' + i;
+    tableCheckboxLabel[i].setAttribute('for', tableCheckboxId);
+    tableCheckboxInput[i].setAttribute('id', tableCheckboxId);
     checkMore.addEventListener('click', () => {
       checkSelectOption.style.display === 'none'
         ? (checkSelectOption.style.display = 'flex')
@@ -293,8 +297,6 @@
       </button>
 
     </td>`;
-
-      console.log(addTr);
     }
 
     console.log(preview.children.length);
