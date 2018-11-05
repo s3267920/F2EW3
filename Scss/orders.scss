@@ -257,13 +257,14 @@ a {
           bottom: 10px;
           left: 1px;
           width: 15px;
+          cursor: pointer;
           height: 15px;
           border-radius: 3px;
           display: inline-block;
           background-color: adjust-color(color(yellow), $lightness: 10%);
-          // &:hover {
-          //   background-color: color(darkGreen);
-          // }
+          &:hover {
+            background-color: color(lightGreen);
+          }
           &::after {
             content: none;
             position: absolute;
@@ -276,7 +277,7 @@ a {
             border-left: 2px solid color(whiteGreen);
           }
         }
-        input:checked + label {
+        input[checked] + label {
           background-color: color(darkGreen);
           &::after {
             content: '';

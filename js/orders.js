@@ -23,26 +23,26 @@
     tableCheckbox[id].setAttribute('id', tableLabelId);
     //label設置連動
     tableLabel[id].addEventListener('click', () => {
+      tableCheckbox[id].setAttribute('checked', 'checked');
       tableCheckbox[id].checked
         ? tableCheckbox[id].setAttribute('checked', 'checked')
         : tableCheckbox[id].removeAttribute('checked', 'checked');
     });
+    //勾選後出現標籤圖樣
+    checkAllBox.addEventListener('click', () => {
+      for (let j = 0; j < statusBtn.length; j++) {
+        checkMenu.style.display = 'none';
+        checkAllBox.checked
+          ? ((checkIcon.style.display = 'flex'),
+            //默認為全選
+            tableCheckbox[j].setAttribute('checked', 'checked'),
+            checkAllBox.setAttribute('checked', 'checked'))
+          : ((checkIcon.style.display = 'none'),
+            tableCheckbox[j].removeAttribute('checked', 'checked'),
+            checkAllBox.removeAttribute('checked', 'checked'));
+      }
+    });
   }
-  //勾選後出現標籤圖樣
-  checkAllBox.addEventListener('click', () => {
-    for (let j = 0; j < statusBtn.length; j++) {
-      checkMenu.style.display = 'none';
-      checkAllBox.checked
-        ? ((checkIcon.style.display = 'flex'),
-          //默認為全選
-          tableCheckbox[j].setAttribute('checked', 'checked'),
-          checkAllBox.setAttribute('checked', 'checked'))
-        : ((checkIcon.style.display = 'none'),
-          tableCheckbox[j].removeAttribute('checked', 'checked'),
-          checkAllBox.removeAttribute('checked', 'checked'));
-    }
-  });
-
   for (let cml = 0; cml < checkMenuA.length; cml++) {
     checkMenuA[cml].addEventListener('click', function() {
       //目前選取的狀態

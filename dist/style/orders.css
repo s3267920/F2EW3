@@ -341,10 +341,15 @@ a {
   bottom: 10px;
   left: 1px;
   width: 15px;
+  cursor: pointer;
   height: 15px;
   border-radius: 3px;
   display: inline-block;
   background-color: #ffedb3;
+}
+
+.content .content_table table .table_check label:hover {
+  background-color: #8da291;
 }
 
 .content .content_table table .table_check label::after {
@@ -360,11 +365,11 @@ a {
   border-left: 2px solid #f9fbfa;
 }
 
-.content .content_table table .table_check input:checked + label {
+.content .content_table table .table_check input[checked] + label {
   background-color: #3f5d45;
 }
 
-.content .content_table table .table_check input:checked + label::after {
+.content .content_table table .table_check input[checked] + label::after {
   content: '';
 }
 
