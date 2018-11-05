@@ -216,7 +216,7 @@
 })();
 
 (function() {
-  let desert = [
+  let dessert = [
     {
       id: 1,
       name: '焦糖馬卡龍',
@@ -260,7 +260,7 @@
     el: '#app',
     data: {
       order: '',
-      desert: desert
+      dessert: dessert
     },
     methods: {
       getDate: () => {
@@ -274,11 +274,11 @@
     },
     mounted() {
       axios
-        .get(' http://localhost:3000/customers')
+        .get(' ../data.json')
         .then(res => {
-          let data = res.data;
+          let data = res.data.customers;
           for (let i = 0; i < data.length; i++) {
-            return (this.order = res.data);
+            return (this.order = data);
           }
         })
         .catch(error => console.log(error));

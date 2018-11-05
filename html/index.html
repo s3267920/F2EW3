@@ -136,9 +136,9 @@
       <h2 class="content_title">Latest Orders</h2>
       <ul id="app">
         <li v-for="i in 3" v-if="order">
-          <span :style="{backgroundImage: 'url(' + desert[i-1].src + ')'}"></span>
+          <span :style="{backgroundImage: 'url(' + dessert[i-1].src + ')'}"></span>
           <div class="orders_content">
-            <p class="order_name">{{desert[i-1].name}}</p>
+            <p class="order_name">{{dessert[i-1].name}}</p>
 
             <div class="time"><img src="../img/clock.svg" alt=""><span v-text="getDate()"></span>
               <span v-text="getTime()"></span></div>
