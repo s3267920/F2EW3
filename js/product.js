@@ -1,4 +1,56 @@
 (function() {
+  let checkAllBtn = document.querySelector('#all');
+  let tableCheckboxLabel = document.querySelectorAll('.table_checkbox>label');
+  let tableCheckboxInput = document.querySelectorAll('.table_checkbox>input');
+  let checkMore = document.querySelector('#check_more_option');
+  let checkIcon = document.querySelector('#check_option_icon');
+  let checkSelectOption = document.querySelector('#select_menu');
+  let checkSelectA = document.querySelectorAll('#select_menu>li>a');
+  let tableTr = document.querySelectorAll('tr');
+  let selectOptionLi = document.querySelectorAll('.status_option>a>li');
+  //表格部分
+  let statusBtn = document.querySelectorAll('.status_Btn');
+  let selectOption = document.querySelectorAll('.status_option');
+
+  let trLightGreen = () => {
+    for (let tr = 1; tr < tableTr.length; tr++) {
+      if (tableTr[tr].rowIndex % 2 === 0) {
+        tableTr[tr].classList.add('lightgreen');
+      } else {
+        tableTr[tr].classList.remove('lightgreen');
+      }
+    }
+  };
+
+  for (let btn = 0; btn < statusBtn.length; btn++) {
+    selectOption[btn].style.display = 'none';
+    statusBtn[btn].addEventListener('click', () => {
+      selectOption[btn].style.display === 'none'
+        ? (selectOption[btn].style.display = 'flex')
+        : (selectOption[btn].style.display = 'none');
+    });
+    document.addEventListener('click', e => {
+      if (e.target === document.documentElement) {
+        checkSelectOption.style.display = 'none';
+        selectOption[btn].style.display = 'none';
+      }
+    });
+  }
+  let statusColor = () => {
+    for (let l = 0; l < statusBtn.length; l++) {
+      let selectTr = statusBtn[l].parentNode.parentNode;
+      if (statusBtn[l].value === 'PUBLISHED') {
+        statusBtn[l].classList.add('green');
+        statusBtn[l].classList.remove('gray');
+        selectTr.classList.remove('unpublished');
+      } else if (statusBtn[l].value === 'UNPUBLISHED') {
+        statusBtn[l].classList.add('gray');
+        statusBtn[l].classList.remove('green');
+        selectTr.classList.add('unpublished');
+      }
+    }
+  };
+
   //增加選項modal部分
   let addLabel = document.querySelector('add_image>form>label');
   let addInput = document.querySelector('#addImage');
@@ -240,60 +292,6 @@
       );
     }
   });
-})();
-
-(function() {
-  let checkAllBtn = document.querySelector('#all');
-  let tableCheckboxLabel = document.querySelectorAll('.table_checkbox>label');
-  let tableCheckboxInput = document.querySelectorAll('.table_checkbox>input');
-  let checkMore = document.querySelector('#check_more_option');
-  let checkIcon = document.querySelector('#check_option_icon');
-  let checkSelectOption = document.querySelector('#select_menu');
-  let checkSelectA = document.querySelectorAll('#select_menu>li>a');
-  let tableTr = document.querySelectorAll('tr');
-  let selectOptionLi = document.querySelectorAll('.status_option>a>li');
-  //表格部分
-  let statusBtn = document.querySelectorAll('.status_Btn');
-  let selectOption = document.querySelectorAll('.status_option');
-
-  let trLightGreen = () => {
-    for (let tr = 1; tr < tableTr.length; tr++) {
-      if (tableTr[tr].rowIndex % 2 === 0) {
-        tableTr[tr].classList.add('lightgreen');
-      } else {
-        tableTr[tr].classList.remove('lightgreen');
-      }
-    }
-  };
-
-  for (let btn = 0; btn < statusBtn.length; btn++) {
-    selectOption[btn].style.display = 'none';
-    statusBtn[btn].addEventListener('click', () => {
-      selectOption[btn].style.display === 'none'
-        ? (selectOption[btn].style.display = 'flex')
-        : (selectOption[btn].style.display = 'none');
-    });
-    document.addEventListener('click', e => {
-      if (e.target === document.documentElement) {
-        checkSelectOption.style.display = 'none';
-        selectOption[btn].style.display = 'none';
-      }
-    });
-  }
-  let statusColor = () => {
-    for (let l = 0; l < statusBtn.length; l++) {
-      let selectTr = statusBtn[l].parentNode.parentNode;
-      if (statusBtn[l].value === 'PUBLISHED') {
-        statusBtn[l].classList.add('green');
-        statusBtn[l].classList.remove('gray');
-        selectTr.classList.remove('unpublished');
-      } else if (statusBtn[l].value === 'UNPUBLISHED') {
-        statusBtn[l].classList.add('gray');
-        statusBtn[l].classList.remove('green');
-        selectTr.classList.add('unpublished');
-      }
-    }
-  };
   for (let a = 0; a < selectOptionLi.length; a++) {
     let selectBtn = selectOptionLi[a].parentNode.parentNode.parentNode;
     let selectLiBtn =
