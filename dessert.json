@@ -6,9 +6,19 @@
       "original": 500,
       "discount": 450,
       "src": "https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=634&q=80",
-      "size": ["L", "M", "S"],
-      "flavor": ["香草", "焦糖"],
-      "inventory": [15, 20]
+      "size": [
+        "L",
+        "M",
+        "S"
+      ],
+      "flavor": [
+        "香草",
+        "焦糖"
+      ],
+      "inventory": [
+        15,
+        20
+      ]
     },
     {
       "id": 2,
@@ -16,9 +26,19 @@
       "original": 500,
       "discount": 450,
       "src": "https://images.unsplash.com/photo-1525203135335-74d272fc8d9c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=61b27d2cefd0dd094b5439f897b43bb7&auto=format&fit=crop&w=1600&q=80",
-      "size": ["L", "M", "S"],
-      "flavor": ["香草", "焦糖"],
-      "inventory": [15, 20]
+      "size": [
+        "L",
+        "M",
+        "S"
+      ],
+      "flavor": [
+        "香草",
+        "焦糖"
+      ],
+      "inventory": [
+        15,
+        20
+      ]
     },
     {
       "id": 3,
@@ -26,9 +46,19 @@
       "original": 500,
       "discount": 450,
       "src": "https://bit.ly/2R5tqwD",
-      "size": ["L", "M", "S"],
-      "flavor": ["香草", "焦糖"],
-      "inventory": [15, 20]
+      "size": [
+        "L",
+        "M",
+        "S"
+      ],
+      "flavor": [
+        "香草",
+        "焦糖"
+      ],
+      "inventory": [
+        15,
+        20
+      ]
     },
     {
       "id": 4,
@@ -36,9 +66,19 @@
       "original": 500,
       "discount": 450,
       "src": "https://bit.ly/2QbVsVR",
-      "size": ["L", "M", "S"],
-      "flavor": ["香草", "焦糖"],
-      "inventory": [15, 20]
+      "size": [
+        "L",
+        "M",
+        "S"
+      ],
+      "flavor": [
+        "香草",
+        "焦糖"
+      ],
+      "inventory": [
+        15,
+        20
+      ]
     },
     {
       "id": 5,
@@ -46,9 +86,19 @@
       "original": 500,
       "discount": 450,
       "src": "https://bit.ly/2Qodh3Z",
-      "size": ["L", "M", "S"],
-      "flavor": ["香草", "焦糖"],
-      "inventory": [15, 20]
+      "size": [
+        "L",
+        "M",
+        "S"
+      ],
+      "flavor": [
+        "香草",
+        "焦糖"
+      ],
+      "inventory": [
+        15,
+        20
+      ]
     },
     {
       "id": 6,
@@ -56,9 +106,19 @@
       "original": 500,
       "discount": 450,
       "src": "https://bit.ly/2Dwoxd7",
-      "size": ["L", "M", "S"],
-      "flavor": ["香草", "焦糖"],
-      "inventory": [15, 20]
+      "size": [
+        "L",
+        "M",
+        "S"
+      ],
+      "flavor": [
+        "香草",
+        "焦糖"
+      ],
+      "inventory": [
+        15,
+        20
+      ]
     },
     {
       "id": 7,
@@ -66,9 +126,37 @@
       "original": 500,
       "discount": 450,
       "src": "https://bit.ly/2QiWeQW",
-      "size": ["L", "M", "S"],
-      "flavor": ["香草", "焦糖"],
-      "inventory": [15, 20]
+      "size": [
+        "L",
+        "M",
+        "S"
+      ],
+      "flavor": [
+        "香草",
+        "焦糖"
+      ],
+      "inventory": [
+        15,
+        20
+      ]
+    },
+    {
+      "product_name": "",
+      "original": "",
+      "discount": "",
+      "size0": "L",
+      "flavor0": "",
+      "inventory0": "",
+      "id": 8
+    },
+    {
+      "product_name": "",
+      "original": "",
+      "discount": "",
+      "size0": "L",
+      "flavor0": "",
+      "inventory0": "",
+      "id": 9
     }
   ]
 }

@@ -80,6 +80,7 @@
   statusColor();
   //check選單
   for (let i = 0; i < tableCheckboxLabel.length; i++) {
+    //表單label 與 input連動
     let tableCheckboxId = 'product' + i;
     tableCheckboxLabel[i].setAttribute('for', tableCheckboxId);
     tableCheckboxInput[i].setAttribute('id', tableCheckboxId);
@@ -93,9 +94,13 @@
         ? (checkSelectOption.style.display = 'flex')
         : (checkSelectOption.style.display = 'none');
     });
-    //表單label 與 input連動
-    tableCheckboxLabel[i].setAttribute('for', i);
-    tableCheckboxInput[i].setAttribute('id', i);
+
+    tableCheckboxLabel[i].addEventListener('click', () => {
+      tableCheckboxInput[i].setAttribute('checked', 'checked');
+      tableCheckboxInput[i].checked
+        ? tableCheckboxInput[i].setAttribute('checked', 'checked')
+        : tableCheckboxInput[i].removeAttribute('checked', 'checked');
+    });
     checkAllBtn.addEventListener('click', () => {
       checkAllBtn.checked
         ? (tableCheckboxInput[i].setAttribute('checked', 'checked'),
@@ -155,7 +160,7 @@
   let addInput = document.querySelector('#addImage');
   let addInputId = addInput.getAttribute('id');
   let preview = document.querySelector('.image_previews');
-
+  let defaultImg = document.querySelector('.image_previews>img');
   //照片上傳
   function readURL(input) {
     let files = input.files;
@@ -170,7 +175,8 @@
             let image = new Image();
             image.src = e.target.result;
             image.alt = input.files[0].name;
-            preview.appendChild(image);
+            //插入在預設之前
+            preview.insertBefore(image, defaultImg);
           },
           false
         );
@@ -189,26 +195,65 @@
   let closeBtn = document.querySelector('.close_btn');
   let specification = document.querySelector('.specification_info');
   let addNewBtn = document.querySelector('.add_new_btn');
-  let specificationContent = `<label for="">
-  <span>Size</span>
-  <select name="" id="">
-    <option value="L">L</option>
-    <option value="M">M</option>
-    <option value="S">S</option>
-  </select>
-  </label>
-  <label for=""><span>Flavor</span><input type="text"></label>
-  <label for=""><span>Inventory</span><input type="text"></label>
-  `;
-  let saveDraft = document.querySelector('#save_draft');
+  let newLi = document.createElement('li');
+  let specificationContentDefault = `<label for="size0">
+    <span>Size</span>
+    <select name="size0" id="size0">
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="S">S</option>
+    </select>
+    </label>
+    <label for="flavor0"><span>Flavor</span><input type="text" id="flavor0" name="flavor0"></label>
+    <label for="inventory0"><span>Inventory</span><input type="number" id="inventory0" name="inventory0"></label>
+    `;
+  //目前增加行數
+  let count = 0;
+  let addNewContent = () => {
+    count++;
+    let newLi = document.createElement('li');
+    let specificationContent = `<label for="${'size' + count}">
+    <span>Size</span>
+    <select name="${'size' + count}" id="${'size' + count}">
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="S">S</option>
+    </select>
+    </label>
+    <label for="${'flavor' +
+      count}"><span>Flavor</span><input type="text" name="${'flavor' +
+      count}" id="${'flavor' + count}"></label>
+    <label for="${'inventory' +
+      count}"><span>Inventory</span><input type="number" name="${'inventory' +
+      count}" id="${'inventory' + count}"></label>
+    `;
+    newLi.innerHTML += specificationContent;
+    specification.appendChild(newLi);
+  };
   addBtn.addEventListener('click', () => {
     modal.style.display = 'flex';
-    specification.insertAdjacentHTML('beforeend', specificationContent);
+    //一開始先加一個(裡面沒有才新增)
+    if (!specification.children.length) {
+      newLi.innerHTML = specificationContentDefault;
+      specification.appendChild(newLi);
+    }
+    if (!preview.children.length) {
+      let newImage = document.createElement('img');
+      newImage.setAttribute('src', '');
+      newImage.setAttribute('alt', '');
+      preview.appendChild(newImage);
+    }
   });
+  //按下按鈕會加入新的規格
+  addNewBtn.addEventListener('click', function() {
+    addNewContent();
+  });
+  //清空
   closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
     specification.innerHTML = '';
     preview.innerHTML = '';
+    count = 0;
   });
   window.addEventListener('click', function(evt) {
     if (evt.target == modal) {
@@ -217,90 +262,138 @@
       preview.innerHTML = '';
     }
   });
-  //按下按鈕會加入新的規格
-
-  addNewBtn.addEventListener('click', () => {
-    specification.insertAdjacentHTML('beforeend', specificationContent);
+  $.ajax({
+    url: '../dessert.json',
+    type: 'get',
+    success: function(res) {
+      console.log(res);
+    },
+    error: function(xhr, resp, text) {
+      console.log(xhr, resp, text);
+    }
   });
-  let newTr = document.createElement('tr');
+  let saveDraft = document.querySelector('#save_draft');
   let publishedBtn = document.querySelector('#submit_btn');
   publishedBtn.addEventListener('click', event => {
-    let trImage = preview.children[0];
-    let productName = document.querySelector('#product_name').value.trim();
-    let original = document.querySelector('#original').value.trim();
-    let discount = document.querySelector('#discount').value.trim();
-    let size = document.querySelector('.size').value;
+    //在事件之外調用的話會獲取不到值
+    let productName = document.getElementById('product_name').value;
+    let imageSrc = document
+      .querySelectorAll('.image_previews>img')[0]
+      .getAttribute('src');
+    let original = document.querySelector('#original').value;
+    let discount = document.querySelector('#discount').value;
+    let addTr = () => {
+      let tbody = document.querySelector('.product_table>tbody');
+      console.log(tbody);
+      let newTr = document.createElement('tr');
+      //下面要接API
+      let newTdContent = `<td class="table_checkbox">
+        <input type="checkbox">
+        <label></label>
+      </td>
+      <td class="product">
+        <img src="${imageSrc}">
+        <span>${productName}</span>
+      </td>
+      <td class="original">$${original}</td>
+      <td class="discount">$${discount}</td>
+      <td class="information">
+        <ul>
+          <li>
+            <div class="size">L</div>
+            <ul class="flavor">
+              <li>香草</li>
+              <li>焦糖</li>
+            </ul>
+            <ul class="inventory">
+              <li>15</li>
+              <li>20</li>
+            </ul>
+          </li>
+          <li>
+            <div class="size">M</div>
+            <ul class="flavor">
+              <li>香草</li>
+              <li>焦糖</li>
+            </ul>
+            <ul class="inventory">
+              <li>15</li>
+              <li>20</li>
+            </ul>
+          </li>
+          <li>
+            <div class="size">S</div>
+            <ul class="flavor">
+              <li>香草</li>
+              <li>焦糖</li>
+            </ul>
+            <ul class="inventory">
+              <li>15</li>
+              <li>20</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+      <td class="status">
+        <button class="status_Btn" value="PUBLISHED">PUBLISHED<span class="triangle_bottom"></span>
+          <ul class="status_option">
+            <a href="javascript:;" class="Published">
+              <li>Published</li>
+            </a>
+            <a href="javascript:;" class="Unpublished">
+              <li>Unpublished</li>
+            </a>
+            <a href="javascript:;" class="delect">
+              <li>Delect</li>
+            </a>
+          </ul>
+        </button>
+      </td>`;
+      newTr.innerHTML = newTdContent;
+      tbody.appendChild(newTr);
+    };
+
+    //送出表單
+    let submitForm = () => {
+      let form1 = document.querySelector('#form1');
+      form1.submit();
+      return false;
+    };
+
+    function post_data() {
+      $.ajax({
+        url: 'http://localhost:3000/dessert',
+        type: 'POST',
+        data: $('form').serialize(),
+        success: function(res) {
+          if (res.success === true) {
+            alert('傳送成功');
+            console.log(res);
+          } else {
+            console.log(res);
+          }
+        },
+        error: function(xhr, resp, text) {
+          console.log(xhr, resp, text);
+        }
+      });
+
+      return false; //重要!一定要写
+    }
     if (preview.children.length === 0) {
       alert('請傳照片');
     } else {
-      let addTr = `
-      <td class="table_checkbox">
-      <input type="checkbox" name="" id="">
-      <label for=""></label>
-    </td>
-    <td class="product">
-      <img src="https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=634&q=80">
-      <span>甜甜圈</span>
-    </td>
-    <td class="original">$500</td>
-    <td class="discount">$450</td>
-    <td class="information">
-      <ul>
-        <li>
-          <div class="size">L</div>
-          <ul class="flavor">
-            <li>香草</li>
-            <li>焦糖</li>
-          </ul>
-          <ul class="inventory">
-            <li>15</li>
-            <li>20</li>
-          </ul>
-        </li>
-        <li>
-          <div class="size">M</div>
-          <ul class="flavor">
-            <li>香草</li>
-            <li>焦糖</li>
-          </ul>
-          <ul class="inventory">
-            <li>15</li>
-            <li>20</li>
-          </ul>
-        </li>
-        <li>
-          <div class="size">S</div>
-          <ul class="flavor">
-            <li>香草</li>
-            <li>焦糖</li>
-          </ul>
-          <ul class="inventory">
-            <li>15</li>
-            <li>20</li>
-          </ul>
-        </li>
-      </ul>
-    </td>
-    <td class="status">
-      <button class="status_Btn" value="PUBLISHED">PUBLISHED<span class="triangle_bottom"></span>
-        <ul class="status_option">
-          <a href="javascript:;" class="Published">
-            <li>Published</li>
-          </a>
-          <a href="javascript:;" class="Unpublished">
-            <li>Unpublished</li>
-          </a>
-          <a href="javascript:;" class="delect">
-            <li>Delect</li>
-          </a>
-        </ul>
-      </button>
-
-    </td>`;
+      post_data();
+      submitForm();
+      addTr();
     }
-
-    console.log(preview.children.length);
-
-    event.preventDefault();
+    specification.innerHTML = '';
+    preview.lastChild.remove();
+    if (specification.innerHTML === '') {
+      specification.insertAdjacentHTML(
+        'beforeend',
+        specificationContentDefault
+      );
+    }
   });
 })();

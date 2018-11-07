@@ -298,10 +298,20 @@ a {
   background-color: #f9fbfa;
 }
 
+.content_head .modal_content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .content_head .modal_content .add_image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-right: 30px;
   margin-left: 30px;
   margin-top: 30px;
@@ -377,9 +387,6 @@ a {
   width: 456px;
   margin-top: 30px;
   margin-bottom: 30px;
-}
-
-.content_head .modal_content .add_information form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -396,14 +403,14 @@ a {
   font-size: 16px;
 }
 
-.content_head .modal_content .add_information form label {
+.content_head .modal_content .add_information label {
   width: 90%;
   margin-bottom: 8px;
   font-weight: bold;
   color: #3f5d45;
 }
 
-.content_head .modal_content .add_information form input {
+.content_head .modal_content .add_information input {
   width: 90%;
   padding: 0 16px;
   line-height: 38px;
@@ -413,23 +420,23 @@ a {
   outline: none;
 }
 
-.content_head .modal_content .add_information form input::-webkit-input-placeholder {
+.content_head .modal_content .add_information input::-webkit-input-placeholder {
   color: #8da291;
 }
 
-.content_head .modal_content .add_information form input:-ms-input-placeholder {
+.content_head .modal_content .add_information input:-ms-input-placeholder {
   color: #8da291;
 }
 
-.content_head .modal_content .add_information form input::-ms-input-placeholder {
+.content_head .modal_content .add_information input::-ms-input-placeholder {
   color: #8da291;
 }
 
-.content_head .modal_content .add_information form input::placeholder {
+.content_head .modal_content .add_information input::placeholder {
   color: #8da291;
 }
 
-.content_head .modal_content .add_information form textarea {
+.content_head .modal_content .add_information textarea {
   width: 90%;
   border-radius: 5px;
   border: 0.5px solid #8da291;
@@ -439,19 +446,19 @@ a {
   outline: none;
 }
 
-.content_head .modal_content .add_information form textarea::-webkit-input-placeholder {
+.content_head .modal_content .add_information textarea::-webkit-input-placeholder {
   color: #8da291;
 }
 
-.content_head .modal_content .add_information form textarea:-ms-input-placeholder {
+.content_head .modal_content .add_information textarea:-ms-input-placeholder {
   color: #8da291;
 }
 
-.content_head .modal_content .add_information form textarea::-ms-input-placeholder {
+.content_head .modal_content .add_information textarea::-ms-input-placeholder {
   color: #8da291;
 }
 
-.content_head .modal_content .add_information form textarea::placeholder {
+.content_head .modal_content .add_information textarea::placeholder {
   color: #8da291;
 }
 
@@ -654,6 +661,10 @@ a {
   border: 1px solid #8da291;
 }
 
+.product_table .table_checkbox > label:hover {
+  background-color: #8da291;
+}
+
 .product_table .table_checkbox > label::after {
   content: none;
   position: absolute;
@@ -671,11 +682,11 @@ a {
   visibility: hidden;
 }
 
-.product_table .table_checkbox input:checked + label {
+.product_table .table_checkbox input[checked] + label {
   background-color: #3f5d45;
 }
 
-.product_table .table_checkbox input:checked + label::after {
+.product_table .table_checkbox input[checked] + label::after {
   content: '';
 }
 

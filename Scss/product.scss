@@ -218,8 +218,12 @@ a {
     display: flex;
     border-radius: 0 0 5px 5px;
     background-color: color(whiteGreen);
+    form {
+      display: flex;
+    }
     .add_image {
       display: flex;
+      flex-direction: column;
       margin-right: 30px;
       margin-left: 30px;
       margin-top: 30px;
@@ -270,41 +274,39 @@ a {
       width: 456px;
       margin-top: 30px;
       margin-bottom: 30px;
-      form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        font-size: nth($font, 2);
-        label {
-          width: 90%;
-          margin-bottom: 8px;
-          font-weight: bold;
-          color: color(darkGreen);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      font-size: nth($font, 2);
+      label {
+        width: 90%;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: color(darkGreen);
+      }
+      input {
+        width: 90%;
+        padding: 0 16px;
+        line-height: 38px;
+        border-radius: 5px;
+        margin-bottom: 8px;
+        border: 0.5px solid color(lightGreen);
+        outline: none;
+        &::placeholder {
+          color: color(lightGreen);
         }
-        input {
-          width: 90%;
-          padding: 0 16px;
-          line-height: 38px;
-          border-radius: 5px;
-          margin-bottom: 8px;
-          border: 0.5px solid color(lightGreen);
-          outline: none;
-          &::placeholder {
-            color: color(lightGreen);
-          }
-        }
-        textarea {
-          width: 90%;
-          border-radius: 5px;
-          border: 0.5px solid color(lightGreen);
-          padding: 10px 16px;
-          resize: none;
-          margin-bottom: 20px;
-          outline: none;
-          &::placeholder {
-            color: color(lightGreen);
-          }
+      }
+      textarea {
+        width: 90%;
+        border-radius: 5px;
+        border: 0.5px solid color(lightGreen);
+        padding: 10px 16px;
+        resize: none;
+        margin-bottom: 20px;
+        outline: none;
+        &::placeholder {
+          color: color(lightGreen);
         }
       }
       .info_price > label {
@@ -467,6 +469,9 @@ a {
       display: inline-block;
       background-color: color(whiteGreen);
       border: 1px solid color(lightGreen);
+      &:hover {
+        background-color: color(lightGreen);
+      }
       &::after {
         content: none;
         position: absolute;
@@ -482,7 +487,7 @@ a {
     > input {
       visibility: hidden;
     }
-    input:checked + label {
+    input[checked] + label {
       background-color: color(darkGreen);
       &::after {
         content: '';
