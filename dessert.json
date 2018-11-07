@@ -157,6 +157,24 @@
       "flavor0": "",
       "inventory0": "",
       "id": 9
+    },
+    {
+      "product_name": "AAA",
+      "original": "",
+      "discount": "",
+      "size0": "L",
+      "flavor0": "",
+      "inventory0": "",
+      "id": 10
+    },
+    {
+      "product_name": "",
+      "original": "",
+      "discount": "",
+      "size0": "L",
+      "flavor0": "",
+      "inventory0": "",
+      "id": 11
     }
   ]
 }
