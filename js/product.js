@@ -50,7 +50,111 @@
       }
     }
   };
+  for (let a = 0; a < selectOptionLi.length; a++) {
+    let selectBtn = selectOptionLi[a].parentNode.parentNode.parentNode;
+    let selectLiBtn =
+      selectOptionLi[a].parentNode.parentNode.parentNode.firstChild;
+    let selectOptionTr = selectOptionLi[a].closest('tr');
+    selectOptionLi[a].addEventListener('click', () => {
+      switch (selectOptionLi[a].textContent) {
+        case 'Published':
+          selectBtn.value = 'PUBLISHED';
+          selectLiBtn.textContent = 'PUBLISHED';
+          statusColor();
+          trLightGreen();
+          break;
+        case 'Unpublished':
+          selectBtn.value = 'UNPUBLISHED';
+          selectLiBtn.textContent = 'UNPUBLISHED';
+          statusColor();
+          trLightGreen();
+          break;
+        default:
+          selectOptionTr.remove();
+          trLightGreen();
+          break;
+      }
+    });
+  }
+  trLightGreen();
+  statusColor();
+  //check選單
+  for (let i = 0; i < tableCheckboxLabel.length; i++) {
+    //表單label 與 input連動
+    let tableCheckboxId = 'product' + i;
+    tableCheckboxLabel[i].setAttribute('for', tableCheckboxId);
+    tableCheckboxInput[i].setAttribute('id', tableCheckboxId);
+    checkMore.addEventListener('click', () => {
+      checkSelectOption.style.display === 'none'
+        ? (checkSelectOption.style.display = 'flex')
+        : (checkSelectOption.style.display = 'none');
+    });
+    checkIcon.addEventListener('click', () => {
+      checkSelectOption.style.display === 'none'
+        ? (checkSelectOption.style.display = 'flex')
+        : (checkSelectOption.style.display = 'none');
+    });
 
+    tableCheckboxLabel[i].addEventListener('click', () => {
+      tableCheckboxInput[i].setAttribute('checked', 'checked');
+      tableCheckboxInput[i].checked
+        ? tableCheckboxInput[i].setAttribute('checked', 'checked')
+        : tableCheckboxInput[i].removeAttribute('checked', 'checked');
+    });
+    checkAllBtn.addEventListener('click', () => {
+      checkAllBtn.checked
+        ? (tableCheckboxInput[i].setAttribute('checked', 'checked'),
+          (checkIcon.style.display = 'flex'),
+          (checkSelectOption.style.display = 'none'))
+        : (tableCheckboxInput[i].removeAttribute('checked', 'checked'),
+          (checkIcon.style.display = 'none'));
+    });
+    for (let j = 0; j < checkSelectA.length; j++) {
+      checkSelectA[j].addEventListener('click', function() {
+        for (let other = 0; other < checkSelectA.length; other++) {
+          switch (checkSelectA[j].textContent) {
+            case 'Select All':
+            case 'Unselect All':
+            case 'Published':
+            case 'Unpublished':
+              checkSelectA[other].classList.remove('has_check');
+              this.classList.add('has_check');
+              break;
+            default:
+              checkSelectA[other].classList.remove('has_check');
+              this.classList.add('has_check');
+              break;
+          }
+        }
+        for (let check = 0; check < statusBtn.length; check++) {
+          switch (checkSelectA[j].textContent) {
+            case 'Select All':
+              tableCheckboxInput[i].setAttribute('checked', 'checked');
+              break;
+            case 'Unselect All':
+              tableCheckboxInput[i].removeAttribute('checked', 'checked');
+              break;
+            case 'Published':
+              statusBtn[check].value === 'PUBLISHED'
+                ? tableCheckboxInput[check].setAttribute('checked', 'checked')
+                : tableCheckboxInput[check].removeAttribute(
+                    'checked',
+                    'checked'
+                  );
+              break;
+            default:
+              statusBtn[check].value === 'UNPUBLISHED'
+                ? tableCheckboxInput[check].setAttribute('checked', 'checked')
+                : tableCheckboxInput[check].removeAttribute(
+                    'checked',
+                    'checked'
+                  );
+              break;
+          }
+        }
+      });
+    }
+  }
   //增加選項modal部分
   let addLabel = document.querySelector('add_image>form>label');
   let addInput = document.querySelector('#addImage');
@@ -247,6 +351,7 @@
       </td>`;
       newTr.innerHTML = newTdContent;
       tbody.appendChild(newTr);
+      trLightGreen();
     };
 
     //送出表單
@@ -292,109 +397,4 @@
       );
     }
   });
-  for (let a = 0; a < selectOptionLi.length; a++) {
-    let selectBtn = selectOptionLi[a].parentNode.parentNode.parentNode;
-    let selectLiBtn =
-      selectOptionLi[a].parentNode.parentNode.parentNode.firstChild;
-    let selectOptionTr = selectOptionLi[a].closest('tr');
-    selectOptionLi[a].addEventListener('click', () => {
-      switch (selectOptionLi[a].textContent) {
-        case 'Published':
-          selectBtn.value = 'PUBLISHED';
-          selectLiBtn.textContent = 'PUBLISHED';
-          statusColor();
-          trLightGreen();
-          break;
-        case 'Unpublished':
-          selectBtn.value = 'UNPUBLISHED';
-          selectLiBtn.textContent = 'UNPUBLISHED';
-          statusColor();
-          trLightGreen();
-          break;
-        default:
-          selectOptionTr.remove();
-          trLightGreen();
-          break;
-      }
-    });
-  }
-  trLightGreen();
-  statusColor();
-  //check選單
-  for (let i = 0; i < tableCheckboxLabel.length; i++) {
-    //表單label 與 input連動
-    let tableCheckboxId = 'product' + i;
-    tableCheckboxLabel[i].setAttribute('for', tableCheckboxId);
-    tableCheckboxInput[i].setAttribute('id', tableCheckboxId);
-    checkMore.addEventListener('click', () => {
-      checkSelectOption.style.display === 'none'
-        ? (checkSelectOption.style.display = 'flex')
-        : (checkSelectOption.style.display = 'none');
-    });
-    checkIcon.addEventListener('click', () => {
-      checkSelectOption.style.display === 'none'
-        ? (checkSelectOption.style.display = 'flex')
-        : (checkSelectOption.style.display = 'none');
-    });
-
-    tableCheckboxLabel[i].addEventListener('click', () => {
-      tableCheckboxInput[i].setAttribute('checked', 'checked');
-      tableCheckboxInput[i].checked
-        ? tableCheckboxInput[i].setAttribute('checked', 'checked')
-        : tableCheckboxInput[i].removeAttribute('checked', 'checked');
-    });
-    checkAllBtn.addEventListener('click', () => {
-      checkAllBtn.checked
-        ? (tableCheckboxInput[i].setAttribute('checked', 'checked'),
-          (checkIcon.style.display = 'flex'),
-          (checkSelectOption.style.display = 'none'))
-        : (tableCheckboxInput[i].removeAttribute('checked', 'checked'),
-          (checkIcon.style.display = 'none'));
-    });
-    for (let j = 0; j < checkSelectA.length; j++) {
-      checkSelectA[j].addEventListener('click', function() {
-        for (let other = 0; other < checkSelectA.length; other++) {
-          switch (checkSelectA[j].textContent) {
-            case 'Select All':
-            case 'Unselect All':
-            case 'Published':
-            case 'Unpublished':
-              checkSelectA[other].classList.remove('has_check');
-              this.classList.add('has_check');
-              break;
-            default:
-              checkSelectA[other].classList.remove('has_check');
-              this.classList.add('has_check');
-              break;
-          }
-        }
-        for (let check = 0; check < statusBtn.length; check++) {
-          switch (checkSelectA[j].textContent) {
-            case 'Select All':
-              tableCheckboxInput[i].setAttribute('checked', 'checked');
-              break;
-            case 'Unselect All':
-              tableCheckboxInput[i].removeAttribute('checked', 'checked');
-              break;
-            case 'Published':
-              statusBtn[check].value === 'PUBLISHED'
-                ? tableCheckboxInput[check].setAttribute('checked', 'checked')
-                : tableCheckboxInput[check].removeAttribute(
-                    'checked',
-                    'checked'
-                  );
-              break;
-            default:
-              statusBtn[check].value === 'UNPUBLISHED'
-                ? tableCheckboxInput[check].setAttribute('checked', 'checked')
-                : tableCheckboxInput[check].removeAttribute(
-                    'checked',
-                    'checked'
-                  );
-              break;
-          }
-        }
-      });
-    }
-  }
 })();
