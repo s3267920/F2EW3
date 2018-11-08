@@ -30,6 +30,7 @@ a {
 
 .content_head #check_option_icon {
   display: none;
+  cursor: pointer;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -96,7 +97,8 @@ a {
   color: #8da291;
 }
 
-.content_head .product_select_option ul {
+.content_head .product_select_option .select_menu,
+.content_head .product_select_option .status_change {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -104,27 +106,31 @@ a {
           flex-direction: column;
   position: absolute;
   top: 15px;
-  left: -45px;
+  left: -30px;
   margin-top: 10px;
   -webkit-box-shadow: 0 0 10px #3f5d45;
           box-shadow: 0 0 10px #3f5d45;
 }
 
-.content_head .product_select_option ul li {
+.content_head .product_select_option .select_menu li,
+.content_head .product_select_option .status_change li {
   background-color: #f9fbfa;
   width: 125px;
   height: 34px;
 }
 
-.content_head .product_select_option ul li:first-child {
+.content_head .product_select_option .select_menu li:first-child,
+.content_head .product_select_option .status_change li:first-child {
   padding-top: 6px;
 }
 
-.content_head .product_select_option ul li:last-child {
+.content_head .product_select_option .select_menu li:last-child,
+.content_head .product_select_option .status_change li:last-child {
   padding-bottom: 6px;
 }
 
-.content_head .product_select_option ul li a {
+.content_head .product_select_option .select_menu li a,
+.content_head .product_select_option .status_change li a {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -139,12 +145,15 @@ a {
   height: 34px;
 }
 
-.content_head .product_select_option ul li a:hover, .content_head .product_select_option ul li a:focus {
+.content_head .product_select_option .select_menu li a:hover, .content_head .product_select_option .select_menu li a:focus,
+.content_head .product_select_option .status_change li a:hover,
+.content_head .product_select_option .status_change li a:focus {
   background-color: #3f5d45;
   color: #f9fbfa;
 }
 
-.content_head .product_select_option ul .has_check {
+.content_head .product_select_option .select_menu .has_check,
+.content_head .product_select_option .status_change .has_check {
   background-color: #ffe180;
 }
 
@@ -800,9 +809,6 @@ a {
 }
 
 .product_table .status .status_option {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

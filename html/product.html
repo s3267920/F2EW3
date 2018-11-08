@@ -30,12 +30,17 @@
       <div class="product_select_option">
         <input type="checkbox" name="check" class="check_all" id="all">
         <label for="all"></label>
-        <span class="triangle_bottom" id="check_more_option"></span>
-        <span id="check_option_icon">
-          <div class="tooltip">Change Status</div>
+        <span class="triangle_bottom" id="check_more_option">
           <ul id="select_menu" class="select_menu">
             <li><a href="javascript:;" class="select_all">Select All</a></li>
             <li><a href="javascript:;" class="unselect_all">Unselect All</a></li>
+            <li><a href="javascript:;" class="Published">Published</a></li>
+            <li><a href="javascript:;" class="Unpublished">Unpublished</a></li>
+          </ul>
+        </span>
+        <span id="check_option_icon">
+          <div class="tooltip">Change Status</div>
+          <ul id="status_change" class="status_change">
             <li><a href="javascript:;" class="Published">Published</a></li>
             <li><a href="javascript:;" class="Unpublished">Unpublished</a></li>
           </ul>
@@ -50,9 +55,9 @@
               </label>
           </div>
           <div class="modal_content">
-            <form action="javascript:;" enctype="multipart/form-data" id="form1" method="post">
+            <form action="javascript:;" enctype="multipart/form-data" id="form1" method="post" onsubmit='return false'>
               <div class="add_image">
-                <input type="file" name="files[]" id="addImage" accept="image/*" required="required">
+                <input type="file" name="src[]" id="addImage" accept="image/*" required="required">
                 <label for="addImage"> <img src="../img/cloud-upload-alt.svg"> Drag an image or click here to upload…</label>
                 <div class="image_previews">
                   <img src="" alt="">
@@ -61,7 +66,7 @@
               <div class="add_information">
 
                 <label for="product_name">Product Discription </label>
-                <input type="text" name="product_name" id="product_name" placeholder="Title" required="required">
+                <input type="text" name="productName" id="product_name" placeholder="Title" required="required">
                 <textarea name="" id="" cols="30" rows="10" placeholder="Discription"></textarea>
                 <label for="">Price</label>
                 <div class="info_price">
@@ -75,14 +80,14 @@
                   <li>
                     <label for="size0">
                       <span>Size</span>
-                      <select name="size0" id="size0" name="size0">
+                      <select name="size" id="size0">
                         <option value="L">L</option>
                         <option value="M">M</option>
                         <option value="S">S</option>
                       </select>
                     </label>
-                    <label for="flavor0"><span>Flavor</span><input type="text" required="required" name="flavor0" id="flavor0"></label>
-                    <label for="inventory0"><span>Inventory</span><input type="number" required="required" name="inventory0"
+                    <label for="flavor0"><span>Flavor</span><input type="text" required="required" name="flavor" id="flavor0"></label>
+                    <label for="inventory0"><span>Inventory</span><input type="number" required="required" name="inventory"
                         id="inventory0"></label>
                   </li>
                 </ul>
@@ -126,36 +131,36 @@
         <ul>
           <li>
             <div class="size">L</div>
-            <ul class="flavor">
-              <li>香草</li>
-              <li>焦糖</li>
-            </ul>
-            <ul class="inventory">
-              <li>15</li>
-              <li>20</li>
-            </ul>
+            <div class="flavor">
+              <p>香草</p>
+              <p>焦糖</p>
+            </div>
+            <div class="inventory">
+              <p>15</p>
+              <p>20</p>
+            </div>
           </li>
           <li>
             <div class="size">M</div>
-            <ul class="flavor">
-              <li>香草</li>
-              <li>焦糖</li>
-            </ul>
-            <ul class="inventory">
-              <li>15</li>
-              <li>20</li>
-            </ul>
+            <div class="flavor">
+              <p>香草</p>
+              <p>焦糖</p>
+            </div>
+            <div class="inventory">
+              <p>15</p>
+              <p>20</p>
+            </div>
           </li>
           <li>
             <div class="size">S</div>
-            <ul class="flavor">
-              <li>香草</li>
-              <li>焦糖</li>
-            </ul>
-            <ul class="inventory">
-              <li>15</li>
-              <li>20</li>
-            </ul>
+            <div class="flavor">
+              <p>香草</p>
+              <p>焦糖</p>
+            </div>
+            <div class="inventory">
+              <p>15</p>
+              <p>20</p>
+            </div>
           </li>
         </ul>
       </td>
@@ -178,8 +183,8 @@
     </tr>
     <tr>
       <td class="table_checkbox">
-        <input type="checkbox" name="" id="">
-        <label for=""></label>
+        <input type="checkbox">
+        <label></label>
       </td>
       <td class="product">
         <img src="https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=634&q=80">
@@ -191,36 +196,36 @@
         <ul>
           <li>
             <div class="size">L</div>
-            <ul class="flavor">
-              <li>香草</li>
-              <li>焦糖</li>
-            </ul>
-            <ul class="inventory">
-              <li>15</li>
-              <li>20</li>
-            </ul>
+            <div class="flavor">
+              <p>香草</p>
+              <p>焦糖</p>
+            </div>
+            <div class="inventory">
+              <p>15</p>
+              <p>20</p>
+            </div>
           </li>
           <li>
             <div class="size">M</div>
-            <ul class="flavor">
-              <li>香草</li>
-              <li>焦糖</li>
-            </ul>
-            <ul class="inventory">
-              <li>15</li>
-              <li>20</li>
-            </ul>
+            <div class="flavor">
+              <p>香草</p>
+              <p>焦糖</p>
+            </div>
+            <div class="inventory">
+              <p>15</p>
+              <p>20</p>
+            </div>
           </li>
           <li>
             <div class="size">S</div>
-            <ul class="flavor">
-              <li>香草</li>
-              <li>焦糖</li>
-            </ul>
-            <ul class="inventory">
-              <li>15</li>
-              <li>20</li>
-            </ul>
+            <div class="flavor">
+              <p>香草</p>
+              <p>焦糖</p>
+            </div>
+            <div class="inventory">
+              <p>15</p>
+              <p>20</p>
+            </div>
           </li>
         </ul>
       </td>
@@ -243,8 +248,8 @@
     </tr>
     <tr>
       <td class="table_checkbox">
-        <input type="checkbox" name="" id="">
-        <label for=""></label>
+        <input type="checkbox">
+        <label></label>
       </td>
       <td class="product">
         <img src="https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=634&q=80">
@@ -256,41 +261,41 @@
         <ul>
           <li>
             <div class="size">L</div>
-            <ul class="flavor">
-              <li>香草</li>
-              <li>焦糖</li>
-            </ul>
-            <ul class="inventory">
-              <li>15</li>
-              <li>20</li>
-            </ul>
+            <div class="flavor">
+              <p>香草</p>
+              <p>焦糖</p>
+            </div>
+            <div class="inventory">
+              <p>15</p>
+              <p>20</p>
+            </div>
           </li>
           <li>
             <div class="size">M</div>
-            <ul class="flavor">
-              <li>香草</li>
-              <li>焦糖</li>
-            </ul>
-            <ul class="inventory">
-              <li>15</li>
-              <li>20</li>
-            </ul>
+            <div class="flavor">
+              <p>香草</p>
+              <p>焦糖</p>
+            </div>
+            <div class="inventory">
+              <p>15</p>
+              <p>20</p>
+            </div>
           </li>
           <li>
             <div class="size">S</div>
-            <ul class="flavor">
-              <li>香草</li>
-              <li>焦糖</li>
-            </ul>
-            <ul class="inventory">
-              <li>15</li>
-              <li>20</li>
-            </ul>
+            <div class="flavor">
+              <p>香草</p>
+              <p>焦糖</p>
+            </div>
+            <div class="inventory">
+              <p>15</p>
+              <p>20</p>
+            </div>
           </li>
         </ul>
       </td>
       <td class="status">
-        <button class="status_Btn" value="UNPUBLISHED">UNPUBLISHED<span class="triangle_bottom"></span>
+        <button class="status_Btn" value="PUBLISHED">PUBLISHED<span class="triangle_bottom"></span>
           <ul class="status_option">
             <a href="javascript:;" class="Published">
               <li>Published</li>
@@ -303,6 +308,7 @@
             </a>
           </ul>
         </button>
+
       </td>
     </tr>
   </table>
